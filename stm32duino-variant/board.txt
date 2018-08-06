@@ -1,0 +1,28 @@
+###############################
+# 53xLIDAR_F411RE board
+Lidar53.name=53xLIDAR_F411RE
+
+Lidar53.build.vid=0x1EAF
+Lidar53.build.pid=0x0004
+Lidar53.vid.0=0x1EAF
+Lidar53.pid.0=0x0004
+
+Lidar53.build.core=arduino
+Lidar53.build.board=Lidar53
+Lidar53.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+
+# Lidar53 board
+# Support: Serial1 (USART2 on PA3, PA2)
+Lidar53.menu.pnum.53xLIDAR_F411RE=53xLIDAR_F411RE
+Lidar53.menu.pnum.53xLIDAR_F411RE.upload.maximum_data_size=131072
+Lidar53.menu.pnum.53xLIDAR_F411RE.build.mcu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Lidar53.menu.pnum.53xLIDAR_F411RE.build.board=53xLIDAR_F411RE
+Lidar53.menu.pnum.53xLIDAR_F411RE.build.series=STM32F4xx
+Lidar53.menu.pnum.53xLIDAR_F411RE.build.product_line=STM32F411xE
+Lidar53.menu.pnum.53xLIDAR_F411RE.build.variant=53xLIDAR_F411RE
+Lidar53.menu.pnum.53xLIDAR_F411RE.build.cmsis_lib_gcc=arm_cortexM4l_math
+
+# Upload menu
+Lidar53.menu.upload_method.STLink=STLink
+Lidar53.menu.upload_method.STLink.upload.protocol=STLink
+Lidar53.menu.upload_method.STLink.upload.tool=stlink_upload
