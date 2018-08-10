@@ -6,8 +6,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title "53xLIDAR Bottom PCB (main)"
-Date "2018-08-06"
-Rev "0"
+Date "2018-08-10"
+Rev "1"
 Comp "Valerio Nappi (valerionappi.it); Mauro Mombelli (github.com/MauroMombelli)"
 Comment1 "LICENSE: CERN OHL"
 Comment2 "5N44P.github.io/53xLIDAR"

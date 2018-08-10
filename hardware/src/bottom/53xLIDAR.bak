@@ -7,7 +7,7 @@ encoding utf-8
 Sheet 1 1
 Title "53xLIDAR Bottom PCB (main)"
 Date "2018-08-06"
-Rev "0"
+Rev "1"
 Comp "Valerio Nappi (valerionappi.it); Mauro Mombelli (github.com/MauroMombelli)"
 Comment1 "LICENSE: CERN OHL"
 Comment2 "5N44P.github.io/53xLIDAR"
@@ -2649,19 +2649,8 @@ Text GLabel 8100 8650 1    50   Input ~ 0
 SCL_IMU
 Wire Wire Line
 	8325 9275 8275 9275
-Text GLabel 10875 9025 2    50   Input ~ 0
+Text GLabel 9800 9075 2    50   Input ~ 0
 IMU_INT_MAG
-$Comp
-L conn1:GS3 J24
-U 1 1 5C46A3F9
-P 10625 9025
-F 0 "J24" H 10750 8900 50  0000 C CNN
-F 1 "GS3" H 10650 8825 50  0000 C CNN
-F 2 "Connectors:GS3" V 10713 8951 50  0001 C CNN
-F 3 "" H 10625 9025 50  0001 C CNN
-	1    10625 9025
-	1    0    0    -1  
-$EndComp
 $Comp
 L conn1:GS3 J25
 U 1 1 5C46A533
@@ -2706,19 +2695,7 @@ Wire Wire Line
 Wire Wire Line
 	7375 9375 7400 9375
 Wire Wire Line
-	10875 9025 10775 9025
-Wire Wire Line
-	10475 8925 10425 8925
-Wire Wire Line
-	10425 8925 10425 8975
-Wire Wire Line
-	10425 8975 9725 8975
-Wire Wire Line
-	10425 9075 10425 9125
-Wire Wire Line
-	10425 9125 10475 9125
-Wire Wire Line
-	9725 9075 10425 9075
+	9800 9075 9725 9075
 NoConn ~ 8325 9375
 $Comp
 L power1:GND #PWR0113
@@ -2737,4 +2714,14 @@ Wire Wire Line
 	3650 7050 3700 7050
 Text GLabel 5175 6550 2    50   Input ~ 0
 IMU_INT
+Text GLabel 2175 4200 0    50   Input ~ 0
+IMU_INT_MAG
+Wire Wire Line
+	2175 4200 2250 4200
+Text GLabel 9800 8975 2    50   Input ~ 0
+IMU_DRDY_MAG
+Wire Wire Line
+	9800 8975 9725 8975
+Text GLabel 8125 4500 2    50   Input ~ 0
+IMU_DRDY_MAG
 $EndSCHEMATC

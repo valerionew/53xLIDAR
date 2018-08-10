@@ -87,7 +87,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory "../../gerbers/bottom/"))
   )
 
   (net 0 "")
@@ -5066,7 +5066,7 @@
   (segment (start 148.612201 77.350022) (end 148.807158 77.544979) (width 0.25) (layer F.Cu) (net 61))
   (segment (start 143.925 76.58502) (end 144.690002 77.350022) (width 0.25) (layer F.Cu) (net 61))
 
-  (zone (net 3) (net_name +3V3) (layer B.Cu) (tstamp 5B6994B3) (hatch edge 0.508)
+  (zone (net 3) (net_name +3V3) (layer B.Cu) (tstamp 5B6D96A6) (hatch edge 0.508)
     (connect_pads (clearance 0.2))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -6384,7 +6384,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5B6994B0) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5B6D96A3) (hatch edge 0.508)
     (connect_pads (clearance 0.2))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.508) (thermal_bridge_width 0.508))
