@@ -52,6 +52,8 @@
 
 #include "vl53l1_api.h"
 
+#include "WS2812.h"
+
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -95,6 +97,8 @@ struct Gpio {
 	const uint16_t mask;
 };
 
+struct Gpio leds = { GPIOA, GPIO_PIN_15 };
+
 struct Gpio xshut[] = { { GPIOC, GPIO_PIN_0 }, { GPIOC, GPIO_PIN_1 }, { GPIOC,
 GPIO_PIN_2 }, { GPIOC, GPIO_PIN_3 }, { GPIOA, GPIO_PIN_4 }, { GPIOA,
 GPIO_PIN_5 }, { GPIOA, GPIO_PIN_6 }, { GPIOA, GPIO_PIN_7 }, };
@@ -107,11 +111,11 @@ GPIO_PIN_5 }, { GPIOA, GPIO_PIN_6 }, { GPIOA, GPIO_PIN_7 }, };
 struct {
 	VL53L1_Dev_t chip;
 	uint8_t valid;
-}sensors[16];
+} sensors[16];
 
 int enableSensor(int i) {
 
-	sensors[i].chip.I2cDevAddr = 0x29<<1;
+	sensors[i].chip.I2cDevAddr = 0x29 << 1;
 	if (i < 8) {
 		sensors[i].chip.I2cHandle = &hi2c1;
 	} else {
@@ -134,23 +138,23 @@ int enableSensor(int i) {
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 1;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_WaitDeviceBooted OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
 
-	err = VL53L1_SetDeviceAddress(&sensors[i].chip, (0x29+i+1) << 1);
-	sensors[i].chip.I2cDevAddr = (0x29+i+1) << 1; //change address even in case of error to reduce miss-talk
-	if (err != VL53L1_ERROR_NONE){
+	err = VL53L1_SetDeviceAddress(&sensors[i].chip, (0x29 + i + 1) << 1);
+	sensors[i].chip.I2cDevAddr = (0x29 + i + 1) << 1; //change address even in case of error to reduce miss-talk
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] = "VL53L1_SetDeviceAddress failed    \n";
 		uint8_t len = sizeof(msg) - 1;
-		msg[len -1 -1] = i + '0';
+		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 2;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_SetDeviceAddress OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -165,7 +169,7 @@ int enableSensor(int i) {
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 3;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_DataInit OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -180,7 +184,7 @@ int enableSensor(int i) {
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 4;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_StaticInit OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -195,23 +199,24 @@ int enableSensor(int i) {
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 5;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_SetDistanceMode OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
 
-
-	err = VL53L1_SetMeasurementTimingBudgetMicroSeconds(&sensors[i].chip, 20000);
+	err = VL53L1_SetMeasurementTimingBudgetMicroSeconds(&sensors[i].chip,
+			20000);
 	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_SetMeasurementTimingBudgetMicroSeconds failed    \n";
+		uint8_t msg[] =
+				"VL53L1_SetMeasurementTimingBudgetMicroSeconds failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 6;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_SetMeasurementTimingBudgetMicroSeconds OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -220,13 +225,14 @@ int enableSensor(int i) {
 
 	err = VL53L1_SetInterMeasurementPeriodMilliSeconds(&sensors[i].chip, 25);
 	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_SetInterMeasurementPeriodMilliSeconds failed    \n";
+		uint8_t msg[] =
+				"VL53L1_SetInterMeasurementPeriodMilliSeconds failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 7;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_SetInterMeasurementPeriodMilliSeconds OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -241,7 +247,7 @@ int enableSensor(int i) {
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 8;
-	}else{
+	} else {
 		uint8_t msg[] = "VL53L1_StartMeasurement OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -262,7 +268,7 @@ void scan(I2C_HandleTypeDef *hi2c) {
 		 */
 		HAL_StatusTypeDef result = HAL_I2C_IsDeviceReady(hi2c, (i << 1), 2, 2);
 		if (result != HAL_OK) // HAL_ERROR or HAL_BUSY or HAL_TIMEOUT
-		{
+				{
 			HAL_UART_Transmit(&huart1, ".", 1, 0xFFFF);
 		}
 		if (result == HAL_OK) {
@@ -273,6 +279,35 @@ void scan(I2C_HandleTypeDef *hi2c) {
 	}
 	char buff[] = "\nSCAN FINISH\n";
 	HAL_UART_Transmit(&huart1, buff, strlen(buff), 0xFFFF);
+}
+
+uint32_t ledColor[4];
+
+void updateLed() {
+	static int lastGreen = 0;
+	static uint8_t first = 1;
+	static uint32_t last = 0;
+	if (!first) {
+		// set back previus led
+		if (lastGreen == 0) {
+			ledColor[3] = last;
+		} else {
+			ledColor[lastGreen - 1] = last;
+		}
+	} else {
+		first = 0;
+	}
+	//set current to blue and increment
+	last = ledColor[lastGreen];
+	ledColor[lastGreen] = 0x00FF00; //blue
+	lastGreen++;
+
+	//avoid overflow
+	if (lastGreen >= 4) {
+		lastGreen = 0;
+	}
+
+	sendColors(ledColor, 4);
 }
 
 /**
@@ -317,20 +352,31 @@ int main(void) {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7,
 			GPIO_PIN_RESET);
 
-	HAL_Delay(2000);
+	for (int i = 0; i < 4; i++) {
+		ledColor[i] = 0x0000FF; //set to blue
+	}
+	sendColors(ledColor, 4);
 
-	for (int i = 0; i < 8; i++){
+	HAL_Delay(1000);
+
+	for (int i = 0; i < 8; i++) {
 		HAL_GPIO_WritePin(xshut[i].port, xshut[i].mask, GPIO_PIN_SET);
-		HAL_Delay(1000);
+		HAL_Delay(10);
+		int error = 0;
+		//error = enableSensor(i); //i2c1
+		error += enableSensor(i + 8); //i2c2
 
-		int error = enableSensor(i); //i2c1
-		error += enableSensor(i+8); //i2c2
-
-		if (error){
+		if (error) {
 			//HAL_GPIO_WritePin(xshut[i].port, xshut[i].mask, GPIO_PIN_RESET);
+			ledColor[i / 2] = 0xFF0000; //set to red
+			sendColors(ledColor, 4);
+		} else {
+			if (ledColor[i / 2] != 0xFF0000) {
+				ledColor[i / 2] = 0; //turn off led
+				sendColors(ledColor, 4);
+			}
 		}
-	 }
-
+	}
 	scan(&hi2c1);
 	scan(&hi2c2);
 
@@ -341,21 +387,20 @@ int main(void) {
 	uint32_t start = HAL_GetTick();
 	while (1) {
 
-		for (int i = 0; i < 16; i++)
-		//int i = 0;
-		{
+		for (int i = 0; i < 16; i++) {
 
 			VL53L1_RangingMeasurementData_t rangingData;
 
 			uint8_t ready = 0;
-			if (sensors[i].valid){
-				VL53L1_Error err = VL53L1_GetMeasurementDataReady(&sensors[i].chip, &ready);
+			if (sensors[i].valid) {
+				VL53L1_Error err = VL53L1_GetMeasurementDataReady(
+						&sensors[i].chip, &ready);
 				if (!err && ready) {
 
-					VL53L1_GetRangingMeasurementData(&sensors[i].chip, &rangingData);
+					VL53L1_GetRangingMeasurementData(&sensors[i].chip,
+							&rangingData);
 
 					VL53L1_ClearInterruptAndStartMeasurement(&sensors[i].chip);
-
 
 					msg[0] = '~';
 					msg[1] = i;
@@ -365,23 +410,27 @@ int main(void) {
 
 					//HAL_UART_Transmit(&huart1, msg, sizeof(msg), 0xFFFF);
 
-					sprintf((char*) buff, "%x\t%d\n", i, rangingData.RangeMilliMeter);
-					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
+					sprintf((char*) buff, "%x\t%d\n", i,
+							rangingData.RangeMilliMeter);
+					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff),
+							0xFFFF);
 
 					fps++;
 				} else if (err) {
-					sprintf((char*) buff, "error %d reading sensor %d\n", err, i);
-					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
+					sprintf((char*) buff, "error %d reading sensor %d\n", err,
+							i);
+					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff),
+							0xFFFF);
 					/*
-					maxErr--;
-					if (!maxErr){
-						sprintf((char*) buff, "reset\n");
-						HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
-						scan(&hi2c1);
-						MX_I2C1_Init();
-						scan(&hi2c1);
-					}
-					*/
+					 maxErr--;
+					 if (!maxErr){
+					 sprintf((char*) buff, "reset\n");
+					 HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
+					 scan(&hi2c1);
+					 MX_I2C1_Init();
+					 scan(&hi2c1);
+					 }
+					 */
 				} else {
 					//sprintf((char*) buff, "not ready\n");0
 					//HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
@@ -389,13 +438,18 @@ int main(void) {
 			}
 		}
 
-		if (HAL_GetTick() - start >= 1000){
+		static uint32_t startLedSpin = 0;
+		if (HAL_GetTick() - startLedSpin >= 100) {
+			startLedSpin = HAL_GetTick();
+			updateLed();
+		}
+
+		if (HAL_GetTick() - start >= 1000) {
 			start = HAL_GetTick();
 			sprintf((char*) buff, "FPS: %d\n", fps);
 			HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
 			fps = 0;
 		}
-
 
 	}
 
