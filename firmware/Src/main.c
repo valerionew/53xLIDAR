@@ -363,7 +363,7 @@ int main(void) {
 		HAL_GPIO_WritePin(xshut[i].port, xshut[i].mask, GPIO_PIN_SET);
 		HAL_Delay(10);
 		int error = 0;
-		//error = enableSensor(i); //i2c1
+		error += enableSensor(i); //i2c1
 		error += enableSensor(i + 8); //i2c2
 
 		if (error) {
@@ -417,10 +417,8 @@ int main(void) {
 
 					fps++;
 				} else if (err) {
-					sprintf((char*) buff, "error %d reading sensor %d\n", err,
-							i);
-					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff),
-							0xFFFF);
+					sprintf((char*) buff, "error %d reading sensor %d\n", err, i);
+					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
 					/*
 					 maxErr--;
 					 if (!maxErr){

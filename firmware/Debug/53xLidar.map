@@ -1493,7 +1493,7 @@ LOAD /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000198                . = ALIGN (0x4)
 
-.text           0x00000000080001a0     0x7748
+.text           0x00000000080001a0     0x7750
                 0x00000000080001a0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001a0       0x40 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
@@ -1912,744 +1912,744 @@ LOAD /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu
                 0x0000000008003cd4       0xac Src/main.o
                 0x0000000008003cd4                SystemClock_Config
  .text.startup.main
-                0x0000000008003d80      0x37c Src/main.o
+                0x0000000008003d80      0x384 Src/main.o
                 0x0000000008003d80                main
  .text._Error_Handler
-                0x00000000080040fc        0x2 Src/main.o
-                0x00000000080040fc                _Error_Handler
- *fill*         0x00000000080040fe        0x2 
+                0x0000000008004104        0x2 Src/main.o
+                0x0000000008004104                _Error_Handler
+ *fill*         0x0000000008004106        0x2 
  .text.HAL_MspInit
-                0x0000000008004100       0x90 Src/stm32f4xx_hal_msp.o
-                0x0000000008004100                HAL_MspInit
+                0x0000000008004108       0x90 Src/stm32f4xx_hal_msp.o
+                0x0000000008004108                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x0000000008004190      0x108 Src/stm32f4xx_hal_msp.o
-                0x0000000008004190                HAL_I2C_MspInit
+                0x0000000008004198      0x108 Src/stm32f4xx_hal_msp.o
+                0x0000000008004198                HAL_I2C_MspInit
  .text.HAL_UART_MspInit
-                0x0000000008004298       0xa4 Src/stm32f4xx_hal_msp.o
-                0x0000000008004298                HAL_UART_MspInit
+                0x00000000080042a0       0xa4 Src/stm32f4xx_hal_msp.o
+                0x00000000080042a0                HAL_UART_MspInit
  .text.NMI_Handler
-                0x000000000800433c        0x2 Src/stm32f4xx_it.o
-                0x000000000800433c                NMI_Handler
- .text.HardFault_Handler
-                0x000000000800433e        0x2 Src/stm32f4xx_it.o
-                0x000000000800433e                HardFault_Handler
- .text.MemManage_Handler
-                0x0000000008004340        0x2 Src/stm32f4xx_it.o
-                0x0000000008004340                MemManage_Handler
- .text.BusFault_Handler
-                0x0000000008004342        0x2 Src/stm32f4xx_it.o
-                0x0000000008004342                BusFault_Handler
- .text.UsageFault_Handler
                 0x0000000008004344        0x2 Src/stm32f4xx_it.o
-                0x0000000008004344                UsageFault_Handler
- .text.SVC_Handler
+                0x0000000008004344                NMI_Handler
+ .text.HardFault_Handler
                 0x0000000008004346        0x2 Src/stm32f4xx_it.o
-                0x0000000008004346                SVC_Handler
- .text.DebugMon_Handler
+                0x0000000008004346                HardFault_Handler
+ .text.MemManage_Handler
                 0x0000000008004348        0x2 Src/stm32f4xx_it.o
-                0x0000000008004348                DebugMon_Handler
- .text.PendSV_Handler
+                0x0000000008004348                MemManage_Handler
+ .text.BusFault_Handler
                 0x000000000800434a        0x2 Src/stm32f4xx_it.o
-                0x000000000800434a                PendSV_Handler
+                0x000000000800434a                BusFault_Handler
+ .text.UsageFault_Handler
+                0x000000000800434c        0x2 Src/stm32f4xx_it.o
+                0x000000000800434c                UsageFault_Handler
+ .text.SVC_Handler
+                0x000000000800434e        0x2 Src/stm32f4xx_it.o
+                0x000000000800434e                SVC_Handler
+ .text.DebugMon_Handler
+                0x0000000008004350        0x2 Src/stm32f4xx_it.o
+                0x0000000008004350                DebugMon_Handler
+ .text.PendSV_Handler
+                0x0000000008004352        0x2 Src/stm32f4xx_it.o
+                0x0000000008004352                PendSV_Handler
  .text.SysTick_Handler
-                0x000000000800434c        0xe Src/stm32f4xx_it.o
-                0x000000000800434c                SysTick_Handler
- *fill*         0x000000000800435a        0x2 
+                0x0000000008004354        0xe Src/stm32f4xx_it.o
+                0x0000000008004354                SysTick_Handler
+ *fill*         0x0000000008004362        0x2 
  .text.USART1_IRQHandler
-                0x000000000800435c        0xc Src/stm32f4xx_it.o
-                0x000000000800435c                USART1_IRQHandler
+                0x0000000008004364        0xc Src/stm32f4xx_it.o
+                0x0000000008004364                USART1_IRQHandler
  .text.OTG_FS_IRQHandler
-                0x0000000008004368        0xc Src/stm32f4xx_it.o
-                0x0000000008004368                OTG_FS_IRQHandler
+                0x0000000008004370        0xc Src/stm32f4xx_it.o
+                0x0000000008004370                OTG_FS_IRQHandler
  .text.SystemInit
-                0x0000000008004374       0x4c Src/system_stm32f4xx.o
-                0x0000000008004374                SystemInit
+                0x000000000800437c       0x4c Src/system_stm32f4xx.o
+                0x000000000800437c                SystemInit
  .text.MX_USB_DEVICE_Init
-                0x00000000080043c0       0x38 Src/usb_device.o
-                0x00000000080043c0                MX_USB_DEVICE_Init
+                0x00000000080043c8       0x38 Src/usb_device.o
+                0x00000000080043c8                MX_USB_DEVICE_Init
  .text.CDC_DeInit_FS
-                0x00000000080043f8        0x4 Src/usbd_cdc_if.o
+                0x0000000008004400        0x4 Src/usbd_cdc_if.o
  .text.CDC_Control_FS
-                0x00000000080043fc        0x4 Src/usbd_cdc_if.o
+                0x0000000008004404        0x4 Src/usbd_cdc_if.o
  .text.CDC_Receive_FS
-                0x0000000008004400       0x1c Src/usbd_cdc_if.o
+                0x0000000008004408       0x1c Src/usbd_cdc_if.o
  .text.CDC_Init_FS
-                0x000000000800441c       0x28 Src/usbd_cdc_if.o
+                0x0000000008004424       0x28 Src/usbd_cdc_if.o
  .text.HAL_PCD_MspInit
-                0x0000000008004444       0x64 Src/usbd_conf.o
-                0x0000000008004444                HAL_PCD_MspInit
+                0x000000000800444c       0x64 Src/usbd_conf.o
+                0x000000000800444c                HAL_PCD_MspInit
  .text.HAL_PCD_SetupStageCallback
-                0x00000000080044a8        0xc Src/usbd_conf.o
-                0x00000000080044a8                HAL_PCD_SetupStageCallback
+                0x00000000080044b0        0xc Src/usbd_conf.o
+                0x00000000080044b0                HAL_PCD_SetupStageCallback
  .text.HAL_PCD_DataOutStageCallback
-                0x00000000080044b4       0x12 Src/usbd_conf.o
-                0x00000000080044b4                HAL_PCD_DataOutStageCallback
+                0x00000000080044bc       0x12 Src/usbd_conf.o
+                0x00000000080044bc                HAL_PCD_DataOutStageCallback
  .text.HAL_PCD_DataInStageCallback
-                0x00000000080044c6       0x10 Src/usbd_conf.o
-                0x00000000080044c6                HAL_PCD_DataInStageCallback
+                0x00000000080044ce       0x10 Src/usbd_conf.o
+                0x00000000080044ce                HAL_PCD_DataInStageCallback
  .text.HAL_PCD_SOFCallback
-                0x00000000080044d6        0x8 Src/usbd_conf.o
-                0x00000000080044d6                HAL_PCD_SOFCallback
+                0x00000000080044de        0x8 Src/usbd_conf.o
+                0x00000000080044de                HAL_PCD_SOFCallback
  .text.HAL_PCD_ResetCallback
-                0x00000000080044de       0x20 Src/usbd_conf.o
-                0x00000000080044de                HAL_PCD_ResetCallback
- *fill*         0x00000000080044fe        0x2 
+                0x00000000080044e6       0x20 Src/usbd_conf.o
+                0x00000000080044e6                HAL_PCD_ResetCallback
+ *fill*         0x0000000008004506        0x2 
  .text.HAL_PCD_SuspendCallback
-                0x0000000008004500       0x30 Src/usbd_conf.o
-                0x0000000008004500                HAL_PCD_SuspendCallback
+                0x0000000008004508       0x30 Src/usbd_conf.o
+                0x0000000008004508                HAL_PCD_SuspendCallback
  .text.HAL_PCD_ResumeCallback
-                0x0000000008004530        0x8 Src/usbd_conf.o
-                0x0000000008004530                HAL_PCD_ResumeCallback
- .text.HAL_PCD_ISOOUTIncompleteCallback
                 0x0000000008004538        0x8 Src/usbd_conf.o
-                0x0000000008004538                HAL_PCD_ISOOUTIncompleteCallback
- .text.HAL_PCD_ISOINIncompleteCallback
+                0x0000000008004538                HAL_PCD_ResumeCallback
+ .text.HAL_PCD_ISOOUTIncompleteCallback
                 0x0000000008004540        0x8 Src/usbd_conf.o
-                0x0000000008004540                HAL_PCD_ISOINIncompleteCallback
- .text.HAL_PCD_ConnectCallback
+                0x0000000008004540                HAL_PCD_ISOOUTIncompleteCallback
+ .text.HAL_PCD_ISOINIncompleteCallback
                 0x0000000008004548        0x8 Src/usbd_conf.o
-                0x0000000008004548                HAL_PCD_ConnectCallback
- .text.HAL_PCD_DisconnectCallback
+                0x0000000008004548                HAL_PCD_ISOINIncompleteCallback
+ .text.HAL_PCD_ConnectCallback
                 0x0000000008004550        0x8 Src/usbd_conf.o
-                0x0000000008004550                HAL_PCD_DisconnectCallback
+                0x0000000008004550                HAL_PCD_ConnectCallback
+ .text.HAL_PCD_DisconnectCallback
+                0x0000000008004558        0x8 Src/usbd_conf.o
+                0x0000000008004558                HAL_PCD_DisconnectCallback
  .text.USBD_LL_Init
-                0x0000000008004558       0x68 Src/usbd_conf.o
-                0x0000000008004558                USBD_LL_Init
+                0x0000000008004560       0x68 Src/usbd_conf.o
+                0x0000000008004560                USBD_LL_Init
  .text.USBD_LL_Start
-                0x00000000080045c0       0x1c Src/usbd_conf.o
-                0x00000000080045c0                USBD_LL_Start
+                0x00000000080045c8       0x1c Src/usbd_conf.o
+                0x00000000080045c8                USBD_LL_Start
  .text.USBD_LL_OpenEP
-                0x00000000080045dc       0x20 Src/usbd_conf.o
-                0x00000000080045dc                USBD_LL_OpenEP
+                0x00000000080045e4       0x20 Src/usbd_conf.o
+                0x00000000080045e4                USBD_LL_OpenEP
  .text.USBD_LL_CloseEP
-                0x00000000080045fc       0x1c Src/usbd_conf.o
-                0x00000000080045fc                USBD_LL_CloseEP
+                0x0000000008004604       0x1c Src/usbd_conf.o
+                0x0000000008004604                USBD_LL_CloseEP
  .text.USBD_LL_StallEP
-                0x0000000008004618       0x1c Src/usbd_conf.o
-                0x0000000008004618                USBD_LL_StallEP
+                0x0000000008004620       0x1c Src/usbd_conf.o
+                0x0000000008004620                USBD_LL_StallEP
  .text.USBD_LL_ClearStallEP
-                0x0000000008004634       0x1c Src/usbd_conf.o
-                0x0000000008004634                USBD_LL_ClearStallEP
+                0x000000000800463c       0x1c Src/usbd_conf.o
+                0x000000000800463c                USBD_LL_ClearStallEP
  .text.USBD_LL_IsStallEP
-                0x0000000008004650       0x26 Src/usbd_conf.o
-                0x0000000008004650                USBD_LL_IsStallEP
- *fill*         0x0000000008004676        0x2 
+                0x0000000008004658       0x26 Src/usbd_conf.o
+                0x0000000008004658                USBD_LL_IsStallEP
+ *fill*         0x000000000800467e        0x2 
  .text.USBD_LL_SetUSBAddress
-                0x0000000008004678       0x1c Src/usbd_conf.o
-                0x0000000008004678                USBD_LL_SetUSBAddress
+                0x0000000008004680       0x1c Src/usbd_conf.o
+                0x0000000008004680                USBD_LL_SetUSBAddress
  .text.USBD_LL_Transmit
-                0x0000000008004694       0x1c Src/usbd_conf.o
-                0x0000000008004694                USBD_LL_Transmit
+                0x000000000800469c       0x1c Src/usbd_conf.o
+                0x000000000800469c                USBD_LL_Transmit
  .text.USBD_LL_PrepareReceive
-                0x00000000080046b0       0x1c Src/usbd_conf.o
-                0x00000000080046b0                USBD_LL_PrepareReceive
+                0x00000000080046b8       0x1c Src/usbd_conf.o
+                0x00000000080046b8                USBD_LL_PrepareReceive
  .text.USBD_LL_GetRxDataSize
-                0x00000000080046cc        0xc Src/usbd_conf.o
-                0x00000000080046cc                USBD_LL_GetRxDataSize
+                0x00000000080046d4        0xc Src/usbd_conf.o
+                0x00000000080046d4                USBD_LL_GetRxDataSize
  .text.USBD_FS_DeviceDescriptor
-                0x00000000080046d8        0xc Src/usbd_desc.o
-                0x00000000080046d8                USBD_FS_DeviceDescriptor
+                0x00000000080046e0        0xc Src/usbd_desc.o
+                0x00000000080046e0                USBD_FS_DeviceDescriptor
  .text.USBD_FS_LangIDStrDescriptor
-                0x00000000080046e4        0xc Src/usbd_desc.o
-                0x00000000080046e4                USBD_FS_LangIDStrDescriptor
+                0x00000000080046ec        0xc Src/usbd_desc.o
+                0x00000000080046ec                USBD_FS_LangIDStrDescriptor
  .text.USBD_FS_ManufacturerStrDescriptor
-                0x00000000080046f0       0x1c Src/usbd_desc.o
-                0x00000000080046f0                USBD_FS_ManufacturerStrDescriptor
+                0x00000000080046f8       0x1c Src/usbd_desc.o
+                0x00000000080046f8                USBD_FS_ManufacturerStrDescriptor
  .text.USBD_FS_ProductStrDescriptor
-                0x000000000800470c       0x1c Src/usbd_desc.o
-                0x000000000800470c                USBD_FS_ProductStrDescriptor
+                0x0000000008004714       0x1c Src/usbd_desc.o
+                0x0000000008004714                USBD_FS_ProductStrDescriptor
  .text.USBD_FS_SerialStrDescriptor
-                0x0000000008004728       0x1c Src/usbd_desc.o
-                0x0000000008004728                USBD_FS_SerialStrDescriptor
+                0x0000000008004730       0x1c Src/usbd_desc.o
+                0x0000000008004730                USBD_FS_SerialStrDescriptor
  .text.USBD_FS_ConfigStrDescriptor
-                0x0000000008004744       0x1c Src/usbd_desc.o
-                0x0000000008004744                USBD_FS_ConfigStrDescriptor
+                0x000000000800474c       0x1c Src/usbd_desc.o
+                0x000000000800474c                USBD_FS_ConfigStrDescriptor
  .text.USBD_FS_InterfaceStrDescriptor
-                0x0000000008004760       0x1c Src/usbd_desc.o
-                0x0000000008004760                USBD_FS_InterfaceStrDescriptor
+                0x0000000008004768       0x1c Src/usbd_desc.o
+                0x0000000008004768                USBD_FS_InterfaceStrDescriptor
  .text.SetPresetMode
-                0x000000000800477c       0xd0 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004784       0xd0 VL53L1X_API/core/vl53l1_api.o
  .text.SetLimitValue
-                0x000000000800484c       0x24 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004854       0x24 VL53L1X_API/core/vl53l1_api.o
  .text.VL53L1_SetDeviceAddress
-                0x0000000008004870        0x8 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004870                VL53L1_SetDeviceAddress
- .text.VL53L1_WaitDeviceBooted
                 0x0000000008004878        0x8 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004878                VL53L1_WaitDeviceBooted
+                0x0000000008004878                VL53L1_SetDeviceAddress
+ .text.VL53L1_WaitDeviceBooted
+                0x0000000008004880        0x8 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004880                VL53L1_WaitDeviceBooted
  .text.VL53L1_SetDistanceMode
-                0x0000000008004880       0x76 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004880                VL53L1_SetDistanceMode
- *fill*         0x00000000080048f6        0x2 
+                0x0000000008004888       0x76 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004888                VL53L1_SetDistanceMode
+ *fill*         0x00000000080048fe        0x2 
  .text.VL53L1_SetMeasurementTimingBudgetMicroSeconds
-                0x00000000080048f8      0x108 VL53L1X_API/core/vl53l1_api.o
-                0x00000000080048f8                VL53L1_SetMeasurementTimingBudgetMicroSeconds
+                0x0000000008004900      0x108 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004900                VL53L1_SetMeasurementTimingBudgetMicroSeconds
  .text.VL53L1_SetPresetMode
-                0x0000000008004a00       0x48 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004a00                VL53L1_SetPresetMode
+                0x0000000008004a08       0x48 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004a08                VL53L1_SetPresetMode
  .text.VL53L1_StaticInit
-                0x0000000008004a48       0x1c VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004a48                VL53L1_StaticInit
+                0x0000000008004a50       0x1c VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004a50                VL53L1_StaticInit
  .text.VL53L1_GetMeasurementTimingBudgetMicroSeconds
-                0x0000000008004a64       0xd4 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004a64                VL53L1_GetMeasurementTimingBudgetMicroSeconds
+                0x0000000008004a6c       0xd4 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004a6c                VL53L1_GetMeasurementTimingBudgetMicroSeconds
  .text.VL53L1_SetInterMeasurementPeriodMilliSeconds
-                0x0000000008004b38       0x10 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004b38                VL53L1_SetInterMeasurementPeriodMilliSeconds
+                0x0000000008004b40       0x10 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004b40                VL53L1_SetInterMeasurementPeriodMilliSeconds
  .text.VL53L1_GetInterMeasurementPeriodMilliSeconds
-                0x0000000008004b48       0x1e VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004b48                VL53L1_GetInterMeasurementPeriodMilliSeconds
+                0x0000000008004b50       0x1e VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004b50                VL53L1_GetInterMeasurementPeriodMilliSeconds
  .text.VL53L1_SetLimitCheckEnable
-                0x0000000008004b66       0x36 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004b66                VL53L1_SetLimitCheckEnable
+                0x0000000008004b6e       0x36 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004b6e                VL53L1_SetLimitCheckEnable
  .text.VL53L1_SetLimitCheckValue
-                0x0000000008004b9c       0x36 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004b9c                VL53L1_SetLimitCheckValue
+                0x0000000008004ba4       0x36 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004ba4                VL53L1_SetLimitCheckValue
  .text.VL53L1_DataInit
-                0x0000000008004bd2       0x50 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004bd2                VL53L1_DataInit
+                0x0000000008004bda       0x50 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004bda                VL53L1_DataInit
  .text.VL53L1_GetLimitCheckValue
-                0x0000000008004c22       0x5a VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004c22                VL53L1_GetLimitCheckValue
+                0x0000000008004c2a       0x5a VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004c2a                VL53L1_GetLimitCheckValue
  .text.VL53L1_StartMeasurement
-                0x0000000008004c7c       0x6e VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004c7c                VL53L1_StartMeasurement
+                0x0000000008004c84       0x6e VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004c84                VL53L1_StartMeasurement
  .text.VL53L1_ClearInterruptAndStartMeasurement
-                0x0000000008004cea       0x88 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004cea                VL53L1_ClearInterruptAndStartMeasurement
+                0x0000000008004cf2       0x88 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004cf2                VL53L1_ClearInterruptAndStartMeasurement
  .text.VL53L1_GetMeasurementDataReady
-                0x0000000008004d72        0x4 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004d72                VL53L1_GetMeasurementDataReady
- *fill*         0x0000000008004d76        0x2 
+                0x0000000008004d7a        0x4 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004d7a                VL53L1_GetMeasurementDataReady
+ *fill*         0x0000000008004d7e        0x2 
  .text.VL53L1_GetRangingMeasurementData
-                0x0000000008004d78      0x150 VL53L1X_API/core/vl53l1_api.o
-                0x0000000008004d78                VL53L1_GetRangingMeasurementData
+                0x0000000008004d80      0x150 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008004d80                VL53L1_GetRangingMeasurementData
  .text.VL53L1_set_inter_measurement_period_ms
-                0x0000000008004ec8       0x18 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004ec8                VL53L1_set_inter_measurement_period_ms
+                0x0000000008004ed0       0x18 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004ed0                VL53L1_set_inter_measurement_period_ms
  .text.VL53L1_get_inter_measurement_period_ms
-                0x0000000008004ee0       0x1a VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004ee0                VL53L1_get_inter_measurement_period_ms
+                0x0000000008004ee8       0x1a VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004ee8                VL53L1_get_inter_measurement_period_ms
  .text.VL53L1_set_timeouts_us
-                0x0000000008004efa       0x30 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004efa                VL53L1_set_timeouts_us
+                0x0000000008004f02       0x30 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004f02                VL53L1_set_timeouts_us
  .text.VL53L1_get_timeouts_us
-                0x0000000008004f2a       0x72 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004f2a                VL53L1_get_timeouts_us
+                0x0000000008004f32       0x72 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004f32                VL53L1_get_timeouts_us
  .text.VL53L1_get_sequence_config_bit
-                0x0000000008004f9c       0x26 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004f9c                VL53L1_get_sequence_config_bit
+                0x0000000008004fa4       0x26 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004fa4                VL53L1_get_sequence_config_bit
  .text.VL53L1_set_user_zone
-                0x0000000008004fc2       0x22 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004fc2                VL53L1_set_user_zone
+                0x0000000008004fca       0x22 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004fca                VL53L1_set_user_zone
  .text.VL53L1_get_user_zone
-                0x0000000008004fe4       0x22 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008004fe4                VL53L1_get_user_zone
+                0x0000000008004fec       0x22 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008004fec                VL53L1_get_user_zone
  .text.VL53L1_get_mode_mitigation_roi
-                0x0000000008005006       0x40 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005006                VL53L1_get_mode_mitigation_roi
+                0x000000000800500e       0x40 VL53L1X_API/core/vl53l1_api_core.o
+                0x000000000800500e                VL53L1_get_mode_mitigation_roi
  .text.VL53L1_read_p2p_data
-                0x0000000008005046       0x78 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005046                VL53L1_read_p2p_data
+                0x000000000800504e       0x78 VL53L1X_API/core/vl53l1_api_core.o
+                0x000000000800504e                VL53L1_read_p2p_data
  .text.VL53L1_get_preset_mode_timing_cfg
-                0x00000000080050be       0x72 VL53L1X_API/core/vl53l1_api_core.o
-                0x00000000080050be                VL53L1_get_preset_mode_timing_cfg
+                0x00000000080050c6       0x72 VL53L1X_API/core/vl53l1_api_core.o
+                0x00000000080050c6                VL53L1_get_preset_mode_timing_cfg
  .text.VL53L1_set_preset_mode
-                0x0000000008005130      0x170 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005130                VL53L1_set_preset_mode
+                0x0000000008005138      0x170 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005138                VL53L1_set_preset_mode
  .text.VL53L1_data_init
-                0x00000000080052a0       0xb2 VL53L1X_API/core/vl53l1_api_core.o
-                0x00000000080052a0                VL53L1_data_init
+                0x00000000080052a8       0xb2 VL53L1X_API/core/vl53l1_api_core.o
+                0x00000000080052a8                VL53L1_data_init
  .text.VL53L1_get_lite_sigma_threshold
-                0x0000000008005352        0xa VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005352                VL53L1_get_lite_sigma_threshold
+                0x000000000800535a        0xa VL53L1X_API/core/vl53l1_api_core.o
+                0x000000000800535a                VL53L1_get_lite_sigma_threshold
  .text.VL53L1_set_lite_sigma_threshold
-                0x000000000800535c        0x8 VL53L1X_API/core/vl53l1_api_core.o
-                0x000000000800535c                VL53L1_set_lite_sigma_threshold
+                0x0000000008005364        0x8 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005364                VL53L1_set_lite_sigma_threshold
  .text.VL53L1_get_lite_min_count_rate
-                0x0000000008005364        0xa VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005364                VL53L1_get_lite_min_count_rate
+                0x000000000800536c        0xa VL53L1X_API/core/vl53l1_api_core.o
+                0x000000000800536c                VL53L1_get_lite_min_count_rate
  .text.VL53L1_set_lite_min_count_rate
-                0x000000000800536e        0x8 VL53L1X_API/core/vl53l1_api_core.o
-                0x000000000800536e                VL53L1_set_lite_min_count_rate
- *fill*         0x0000000008005376        0x2 
+                0x0000000008005376        0x8 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005376                VL53L1_set_lite_min_count_rate
+ *fill*         0x000000000800537e        0x2 
  .text.VL53L1_init_and_start_range
-                0x0000000008005378      0x1b4 VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005378                VL53L1_init_and_start_range
+                0x0000000008005380      0x1b4 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005380                VL53L1_init_and_start_range
  .text.VL53L1_stop_range
-                0x000000000800552c       0x44 VL53L1X_API/core/vl53l1_api_core.o
-                0x000000000800552c                VL53L1_stop_range
+                0x0000000008005534       0x44 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005534                VL53L1_stop_range
  .text.VL53L1_get_measurement_results
-                0x0000000008005570       0x5c VL53L1X_API/core/vl53l1_api_core.o
-                0x0000000008005570                VL53L1_get_measurement_results
+                0x0000000008005578       0x5c VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005578                VL53L1_get_measurement_results
  .text.VL53L1_clear_interrupt_and_enable_next_range
-                0x00000000080055cc        0x6 VL53L1X_API/core/vl53l1_api_core.o
-                0x00000000080055cc                VL53L1_clear_interrupt_and_enable_next_range
- *fill*         0x00000000080055d2        0x2 
+                0x00000000080055d4        0x6 VL53L1X_API/core/vl53l1_api_core.o
+                0x00000000080055d4                VL53L1_clear_interrupt_and_enable_next_range
+ *fill*         0x00000000080055da        0x2 
  .text.VL53L1_copy_sys_and_core_results_to_range_results
-                0x00000000080055d4      0x168 VL53L1X_API/core/vl53l1_api_core.o
-                0x00000000080055d4                VL53L1_copy_sys_and_core_results_to_range_results
+                0x00000000080055dc      0x168 VL53L1X_API/core/vl53l1_api_core.o
+                0x00000000080055dc                VL53L1_copy_sys_and_core_results_to_range_results
  .text.VL53L1_get_device_results
-                0x000000000800573c       0x8c VL53L1X_API/core/vl53l1_api_core.o
-                0x000000000800573c                VL53L1_get_device_results
+                0x0000000008005744       0x8c VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008005744                VL53L1_get_device_results
  .text.VL53L1_get_tuning_parm
-                0x00000000080057c8      0x1ae VL53L1X_API/core/vl53l1_api_core.o
-                0x00000000080057c8                VL53L1_get_tuning_parm
+                0x00000000080057d0      0x1ae VL53L1X_API/core/vl53l1_api_core.o
+                0x00000000080057d0                VL53L1_get_tuning_parm
  .text.VL53L1_init_refspadchar_config_struct
-                0x0000000008005976       0x24 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005976                VL53L1_init_refspadchar_config_struct
+                0x000000000800597e       0x24 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x000000000800597e                VL53L1_init_refspadchar_config_struct
  .text.VL53L1_init_ssc_config_struct
-                0x000000000800599a       0x1e VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x000000000800599a                VL53L1_init_ssc_config_struct
+                0x00000000080059a2       0x1e VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x00000000080059a2                VL53L1_init_ssc_config_struct
  .text.VL53L1_init_xtalk_config_struct
-                0x00000000080059b8       0x4a VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x00000000080059b8                VL53L1_init_xtalk_config_struct
+                0x00000000080059c0       0x4a VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x00000000080059c0                VL53L1_init_xtalk_config_struct
  .text.VL53L1_init_offset_cal_config_struct
-                0x0000000008005a02       0x24 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005a02                VL53L1_init_offset_cal_config_struct
+                0x0000000008005a0a       0x24 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005a0a                VL53L1_init_offset_cal_config_struct
  .text.VL53L1_init_tuning_parm_storage_struct
-                0x0000000008005a26       0x96 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005a26                VL53L1_init_tuning_parm_storage_struct
+                0x0000000008005a2e       0x96 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005a2e                VL53L1_init_tuning_parm_storage_struct
  .text.VL53L1_preset_mode_standard_ranging
-                0x0000000008005abc      0x148 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005abc                VL53L1_preset_mode_standard_ranging
+                0x0000000008005ac4      0x148 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005ac4                VL53L1_preset_mode_standard_ranging
  .text.VL53L1_preset_mode_standard_ranging_short_range
-                0x0000000008005c04       0x3c VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005c04                VL53L1_preset_mode_standard_ranging_short_range
+                0x0000000008005c0c       0x3c VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005c0c                VL53L1_preset_mode_standard_ranging_short_range
  .text.VL53L1_preset_mode_standard_ranging_long_range
-                0x0000000008005c40       0x3c VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005c40                VL53L1_preset_mode_standard_ranging_long_range
+                0x0000000008005c48       0x3c VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005c48                VL53L1_preset_mode_standard_ranging_long_range
  .text.VL53L1_preset_mode_standard_ranging_mm1_cal
-                0x0000000008005c7c       0x20 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005c7c                VL53L1_preset_mode_standard_ranging_mm1_cal
+                0x0000000008005c84       0x20 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005c84                VL53L1_preset_mode_standard_ranging_mm1_cal
  .text.VL53L1_preset_mode_standard_ranging_mm2_cal
-                0x0000000008005c9c       0x20 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005c9c                VL53L1_preset_mode_standard_ranging_mm2_cal
+                0x0000000008005ca4       0x20 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005ca4                VL53L1_preset_mode_standard_ranging_mm2_cal
  .text.VL53L1_preset_mode_timed_ranging
-                0x0000000008005cbc       0x36 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005cbc                VL53L1_preset_mode_timed_ranging
+                0x0000000008005cc4       0x36 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005cc4                VL53L1_preset_mode_timed_ranging
  .text.VL53L1_preset_mode_timed_ranging_short_range
-                0x0000000008005cf2       0x38 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005cf2                VL53L1_preset_mode_timed_ranging_short_range
+                0x0000000008005cfa       0x38 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005cfa                VL53L1_preset_mode_timed_ranging_short_range
  .text.VL53L1_preset_mode_timed_ranging_long_range
-                0x0000000008005d2a       0x36 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005d2a                VL53L1_preset_mode_timed_ranging_long_range
+                0x0000000008005d32       0x36 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005d32                VL53L1_preset_mode_timed_ranging_long_range
  .text.VL53L1_preset_mode_low_power_auto_ranging
-                0x0000000008005d60       0x2a VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005d60                VL53L1_preset_mode_low_power_auto_ranging
+                0x0000000008005d68       0x2a VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005d68                VL53L1_preset_mode_low_power_auto_ranging
  .text.VL53L1_preset_mode_low_power_auto_short_ranging
-                0x0000000008005d8a       0x2a VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005d8a                VL53L1_preset_mode_low_power_auto_short_ranging
+                0x0000000008005d92       0x2a VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005d92                VL53L1_preset_mode_low_power_auto_short_ranging
  .text.VL53L1_preset_mode_low_power_auto_long_ranging
-                0x0000000008005db4       0x2a VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005db4                VL53L1_preset_mode_low_power_auto_long_ranging
+                0x0000000008005dbc       0x2a VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005dbc                VL53L1_preset_mode_low_power_auto_long_ranging
  .text.VL53L1_preset_mode_singleshot_ranging
-                0x0000000008005dde       0x30 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005dde                VL53L1_preset_mode_singleshot_ranging
+                0x0000000008005de6       0x30 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005de6                VL53L1_preset_mode_singleshot_ranging
  .text.VL53L1_preset_mode_olt
-                0x0000000008005e0e       0x18 VL53L1X_API/core/vl53l1_api_preset_modes.o
-                0x0000000008005e0e                VL53L1_preset_mode_olt
+                0x0000000008005e16       0x18 VL53L1X_API/core/vl53l1_api_preset_modes.o
+                0x0000000008005e16                VL53L1_preset_mode_olt
  .text.VL53L1_init_version
-                0x0000000008005e26       0x1a VL53L1X_API/core/vl53l1_core.o
-                0x0000000008005e26                VL53L1_init_version
+                0x0000000008005e2e       0x1a VL53L1X_API/core/vl53l1_core.o
+                0x0000000008005e2e                VL53L1_init_version
  .text.VL53L1_init_ll_driver_state
-                0x0000000008005e40       0x26 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008005e40                VL53L1_init_ll_driver_state
+                0x0000000008005e48       0x26 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008005e48                VL53L1_init_ll_driver_state
  .text.VL53L1_update_ll_driver_rd_state
-                0x0000000008005e66       0x90 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008005e66                VL53L1_update_ll_driver_rd_state
+                0x0000000008005e6e       0x90 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008005e6e                VL53L1_update_ll_driver_rd_state
  .text.VL53L1_check_ll_driver_rd_state
-                0x0000000008005ef6       0x58 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008005ef6                VL53L1_check_ll_driver_rd_state
+                0x0000000008005efe       0x58 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008005efe                VL53L1_check_ll_driver_rd_state
  .text.VL53L1_update_ll_driver_cfg_state
-                0x0000000008005f4e       0x78 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008005f4e                VL53L1_update_ll_driver_cfg_state
+                0x0000000008005f56       0x78 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008005f56                VL53L1_update_ll_driver_cfg_state
  .text.VL53L1_copy_rtn_good_spads_to_buffer
-                0x0000000008005fc6       0xa2 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008005fc6                VL53L1_copy_rtn_good_spads_to_buffer
+                0x0000000008005fce       0xa2 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008005fce                VL53L1_copy_rtn_good_spads_to_buffer
  .text.VL53L1_i2c_encode_uint16_t
-                0x0000000008006068       0x10 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006068                VL53L1_i2c_encode_uint16_t
+                0x0000000008006070       0x10 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006070                VL53L1_i2c_encode_uint16_t
  .text.VL53L1_i2c_decode_uint16_t
-                0x0000000008006078       0x16 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006078                VL53L1_i2c_decode_uint16_t
+                0x0000000008006080       0x16 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006080                VL53L1_i2c_decode_uint16_t
  .text.VL53L1_i2c_encode_int16_t
-                0x000000000800608e       0x10 VL53L1X_API/core/vl53l1_core.o
-                0x000000000800608e                VL53L1_i2c_encode_int16_t
+                0x0000000008006096       0x10 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006096                VL53L1_i2c_encode_int16_t
  .text.VL53L1_i2c_decode_int16_t
-                0x000000000800609e       0x1c VL53L1X_API/core/vl53l1_core.o
-                0x000000000800609e                VL53L1_i2c_decode_int16_t
+                0x00000000080060a6       0x1c VL53L1X_API/core/vl53l1_core.o
+                0x00000000080060a6                VL53L1_i2c_decode_int16_t
  .text.VL53L1_i2c_encode_uint32_t
-                0x00000000080060ba       0x10 VL53L1X_API/core/vl53l1_core.o
-                0x00000000080060ba                VL53L1_i2c_encode_uint32_t
+                0x00000000080060c2       0x10 VL53L1X_API/core/vl53l1_core.o
+                0x00000000080060c2                VL53L1_i2c_encode_uint32_t
  .text.VL53L1_i2c_decode_uint32_t
-                0x00000000080060ca       0x14 VL53L1X_API/core/vl53l1_core.o
-                0x00000000080060ca                VL53L1_i2c_decode_uint32_t
+                0x00000000080060d2       0x14 VL53L1X_API/core/vl53l1_core.o
+                0x00000000080060d2                VL53L1_i2c_decode_uint32_t
  .text.VL53L1_i2c_decode_int32_t
-                0x00000000080060de       0x1a VL53L1X_API/core/vl53l1_core.o
-                0x00000000080060de                VL53L1_i2c_decode_int32_t
+                0x00000000080060e6       0x1a VL53L1X_API/core/vl53l1_core.o
+                0x00000000080060e6                VL53L1_i2c_decode_int32_t
  .text.VL53L1_calc_macro_period_us
-                0x00000000080060f8       0x1e VL53L1X_API/core/vl53l1_core.o
-                0x00000000080060f8                VL53L1_calc_macro_period_us
+                0x0000000008006100       0x1e VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006100                VL53L1_calc_macro_period_us
  .text.VL53L1_calc_range_ignore_threshold
-                0x0000000008006116       0x4a VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006116                VL53L1_calc_range_ignore_threshold
+                0x000000000800611e       0x4a VL53L1X_API/core/vl53l1_core.o
+                0x000000000800611e                VL53L1_calc_range_ignore_threshold
  .text.VL53L1_calc_timeout_us
-                0x0000000008006160       0x12 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006160                VL53L1_calc_timeout_us
+                0x0000000008006168       0x12 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006168                VL53L1_calc_timeout_us
  .text.VL53L1_encode_timeout
-                0x0000000008006172       0x1e VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006172                VL53L1_encode_timeout
+                0x000000000800617a       0x1e VL53L1X_API/core/vl53l1_core.o
+                0x000000000800617a                VL53L1_encode_timeout
  .text.VL53L1_calc_encoded_timeout
-                0x0000000008006190        0xe VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006190                VL53L1_calc_encoded_timeout
+                0x0000000008006198        0xe VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006198                VL53L1_calc_encoded_timeout
  .text.VL53L1_decode_timeout
-                0x000000000800619e        0xc VL53L1X_API/core/vl53l1_core.o
-                0x000000000800619e                VL53L1_decode_timeout
+                0x00000000080061a6        0xc VL53L1X_API/core/vl53l1_core.o
+                0x00000000080061a6                VL53L1_decode_timeout
  .text.VL53L1_calc_decoded_timeout_us
-                0x00000000080061aa       0x18 VL53L1X_API/core/vl53l1_core.o
-                0x00000000080061aa                VL53L1_calc_decoded_timeout_us
+                0x00000000080061b2       0x18 VL53L1X_API/core/vl53l1_core.o
+                0x00000000080061b2                VL53L1_calc_decoded_timeout_us
  .text.VL53L1_calc_timeout_register_values
-                0x00000000080061c2       0x7e VL53L1X_API/core/vl53l1_core.o
-                0x00000000080061c2                VL53L1_calc_timeout_register_values
+                0x00000000080061ca       0x7e VL53L1X_API/core/vl53l1_core.o
+                0x00000000080061ca                VL53L1_calc_timeout_register_values
  .text.VL53L1_encode_row_col
-                0x0000000008006240       0x16 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006240                VL53L1_encode_row_col
+                0x0000000008006248       0x16 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006248                VL53L1_encode_row_col
  .text.VL53L1_decode_zone_size
-                0x0000000008006256        0xc VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006256                VL53L1_decode_zone_size
+                0x000000000800625e        0xc VL53L1X_API/core/vl53l1_core.o
+                0x000000000800625e                VL53L1_decode_zone_size
  .text.VL53L1_encode_zone_size
-                0x0000000008006262        0x8 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006262                VL53L1_encode_zone_size
+                0x000000000800626a        0x8 VL53L1X_API/core/vl53l1_core.o
+                0x000000000800626a                VL53L1_encode_zone_size
  .text.VL53L1_low_power_auto_data_init
-                0x000000000800626a       0x2c VL53L1X_API/core/vl53l1_core.o
-                0x000000000800626a                VL53L1_low_power_auto_data_init
+                0x0000000008006272       0x2c VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006272                VL53L1_low_power_auto_data_init
  .text.VL53L1_low_power_auto_data_stop_range
-                0x0000000008006296       0x32 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006296                VL53L1_low_power_auto_data_stop_range
+                0x000000000800629e       0x32 VL53L1X_API/core/vl53l1_core.o
+                0x000000000800629e                VL53L1_low_power_auto_data_stop_range
  .text.VL53L1_config_low_power_auto_mode
-                0x00000000080062c8       0x1a VL53L1X_API/core/vl53l1_core.o
-                0x00000000080062c8                VL53L1_config_low_power_auto_mode
+                0x00000000080062d0       0x1a VL53L1X_API/core/vl53l1_core.o
+                0x00000000080062d0                VL53L1_config_low_power_auto_mode
  .text.VL53L1_low_power_auto_setup_manual_calibration
-                0x00000000080062e2       0x3e VL53L1X_API/core/vl53l1_core.o
-                0x00000000080062e2                VL53L1_low_power_auto_setup_manual_calibration
+                0x00000000080062ea       0x3e VL53L1X_API/core/vl53l1_core.o
+                0x00000000080062ea                VL53L1_low_power_auto_setup_manual_calibration
  .text.VL53L1_low_power_auto_update_DSS
-                0x0000000008006320       0x50 VL53L1X_API/core/vl53l1_core.o
-                0x0000000008006320                VL53L1_low_power_auto_update_DSS
+                0x0000000008006328       0x50 VL53L1X_API/core/vl53l1_core.o
+                0x0000000008006328                VL53L1_low_power_auto_update_DSS
  .text.VL53L1_calc_pll_period_us
-                0x0000000008006370        0xa VL53L1X_API/core/vl53l1_core_support.o
-                0x0000000008006370                VL53L1_calc_pll_period_us
+                0x0000000008006378        0xa VL53L1X_API/core/vl53l1_core_support.o
+                0x0000000008006378                VL53L1_calc_pll_period_us
  .text.VL53L1_decode_vcsel_period
-                0x000000000800637a        0xa VL53L1X_API/core/vl53l1_core_support.o
-                0x000000000800637a                VL53L1_decode_vcsel_period
+                0x0000000008006382        0xa VL53L1X_API/core/vl53l1_core_support.o
+                0x0000000008006382                VL53L1_decode_vcsel_period
  .text.VL53L1_decode_row_col
-                0x0000000008006384       0x26 VL53L1X_API/core/vl53l1_core_support.o
-                0x0000000008006384                VL53L1_decode_row_col
+                0x000000000800638c       0x26 VL53L1X_API/core/vl53l1_core_support.o
+                0x000000000800638c                VL53L1_decode_row_col
  .text.VL53L1_i2c_encode_static_nvm_managed
-                0x00000000080063aa       0x5a VL53L1X_API/core/vl53l1_register_funcs.o
-                0x00000000080063aa                VL53L1_i2c_encode_static_nvm_managed
+                0x00000000080063b2       0x5a VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080063b2                VL53L1_i2c_encode_static_nvm_managed
  .text.VL53L1_i2c_decode_static_nvm_managed
-                0x0000000008006404       0x5a VL53L1X_API/core/vl53l1_register_funcs.o
-                0x0000000008006404                VL53L1_i2c_decode_static_nvm_managed
+                0x000000000800640c       0x5a VL53L1X_API/core/vl53l1_register_funcs.o
+                0x000000000800640c                VL53L1_i2c_decode_static_nvm_managed
  .text.VL53L1_get_static_nvm_managed
-                0x000000000800645e       0x1e VL53L1X_API/core/vl53l1_register_funcs.o
-                0x000000000800645e                VL53L1_get_static_nvm_managed
+                0x0000000008006466       0x1e VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006466                VL53L1_get_static_nvm_managed
  .text.VL53L1_i2c_encode_customer_nvm_managed
-                0x000000000800647c       0xa2 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x000000000800647c                VL53L1_i2c_encode_customer_nvm_managed
+                0x0000000008006484       0xa2 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006484                VL53L1_i2c_encode_customer_nvm_managed
  .text.VL53L1_i2c_decode_customer_nvm_managed
-                0x000000000800651e       0x9a VL53L1X_API/core/vl53l1_register_funcs.o
-                0x000000000800651e                VL53L1_i2c_decode_customer_nvm_managed
+                0x0000000008006526       0x9a VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006526                VL53L1_i2c_decode_customer_nvm_managed
  .text.VL53L1_get_customer_nvm_managed
-                0x00000000080065b8       0x20 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x00000000080065b8                VL53L1_get_customer_nvm_managed
+                0x00000000080065c0       0x20 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080065c0                VL53L1_get_customer_nvm_managed
  .text.VL53L1_i2c_encode_static_config
-                0x00000000080065d8       0xdc VL53L1X_API/core/vl53l1_register_funcs.o
-                0x00000000080065d8                VL53L1_i2c_encode_static_config
+                0x00000000080065e0       0xdc VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080065e0                VL53L1_i2c_encode_static_config
  .text.VL53L1_i2c_encode_general_config
-                0x00000000080066b4       0x8a VL53L1X_API/core/vl53l1_register_funcs.o
-                0x00000000080066b4                VL53L1_i2c_encode_general_config
+                0x00000000080066bc       0x8a VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080066bc                VL53L1_i2c_encode_general_config
  .text.VL53L1_i2c_encode_timing_config
-                0x000000000800673e       0x86 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x000000000800673e                VL53L1_i2c_encode_timing_config
+                0x0000000008006746       0x86 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006746                VL53L1_i2c_encode_timing_config
  .text.VL53L1_i2c_encode_dynamic_config
-                0x00000000080067c4       0x84 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x00000000080067c4                VL53L1_i2c_encode_dynamic_config
+                0x00000000080067cc       0x84 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080067cc                VL53L1_i2c_encode_dynamic_config
  .text.VL53L1_i2c_encode_system_control
-                0x0000000008006848       0x32 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x0000000008006848                VL53L1_i2c_encode_system_control
+                0x0000000008006850       0x32 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006850                VL53L1_i2c_encode_system_control
  .text.VL53L1_set_system_control
-                0x000000000800687a       0x20 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x000000000800687a                VL53L1_set_system_control
+                0x0000000008006882       0x20 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006882                VL53L1_set_system_control
  .text.VL53L1_i2c_decode_system_results
-                0x000000000800689a      0x11e VL53L1X_API/core/vl53l1_register_funcs.o
-                0x000000000800689a                VL53L1_i2c_decode_system_results
+                0x00000000080068a2      0x11e VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080068a2                VL53L1_i2c_decode_system_results
  .text.VL53L1_i2c_decode_core_results
-                0x00000000080069b8       0x76 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x00000000080069b8                VL53L1_i2c_decode_core_results
+                0x00000000080069c0       0x76 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x00000000080069c0                VL53L1_i2c_decode_core_results
  .text.VL53L1_i2c_decode_debug_results
-                0x0000000008006a2e      0x1b2 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x0000000008006a2e                VL53L1_i2c_decode_debug_results
+                0x0000000008006a36      0x1b2 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006a36                VL53L1_i2c_decode_debug_results
  .text.VL53L1_i2c_decode_nvm_copy_data
-                0x0000000008006be0      0x14a VL53L1X_API/core/vl53l1_register_funcs.o
-                0x0000000008006be0                VL53L1_i2c_decode_nvm_copy_data
+                0x0000000008006be8      0x14a VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006be8                VL53L1_i2c_decode_nvm_copy_data
  .text.VL53L1_get_nvm_copy_data
-                0x0000000008006d2a       0x22 VL53L1X_API/core/vl53l1_register_funcs.o
-                0x0000000008006d2a                VL53L1_get_nvm_copy_data
+                0x0000000008006d32       0x22 VL53L1X_API/core/vl53l1_register_funcs.o
+                0x0000000008006d32                VL53L1_get_nvm_copy_data
  .text.VL53L1_is_new_data_ready
-                0x0000000008006d4c       0x34 VL53L1X_API/core/vl53l1_wait.o
-                0x0000000008006d4c                VL53L1_is_new_data_ready
+                0x0000000008006d54       0x34 VL53L1X_API/core/vl53l1_wait.o
+                0x0000000008006d54                VL53L1_is_new_data_ready
  .text.VL53L1_poll_for_boot_completion
-                0x0000000008006d80       0x34 VL53L1X_API/core/vl53l1_wait.o
-                0x0000000008006d80                VL53L1_poll_for_boot_completion
+                0x0000000008006d88       0x34 VL53L1X_API/core/vl53l1_wait.o
+                0x0000000008006d88                VL53L1_poll_for_boot_completion
  .text._I2CWrite
-                0x0000000008006db4       0x1e VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006db4                _I2CWrite
+                0x0000000008006dbc       0x1e VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006dbc                _I2CWrite
  .text._I2CRead
-                0x0000000008006dd2       0x20 VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006dd2                _I2CRead
- *fill*         0x0000000008006df2        0x2 
+                0x0000000008006dda       0x20 VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006dda                _I2CRead
+ *fill*         0x0000000008006dfa        0x2 
  .text.VL53L1_WriteMulti
-                0x0000000008006df4       0x40 VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006df4                VL53L1_WriteMulti
+                0x0000000008006dfc       0x40 VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006dfc                VL53L1_WriteMulti
  .text.VL53L1_ReadMulti
-                0x0000000008006e34       0x30 VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006e34                VL53L1_ReadMulti
+                0x0000000008006e3c       0x30 VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006e3c                VL53L1_ReadMulti
  .text.VL53L1_WrByte
-                0x0000000008006e64       0x24 VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006e64                VL53L1_WrByte
+                0x0000000008006e6c       0x24 VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006e6c                VL53L1_WrByte
  .text.VL53L1_RdByte
-                0x0000000008006e88       0x30 VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006e88                VL53L1_RdByte
+                0x0000000008006e90       0x30 VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006e90                VL53L1_RdByte
  .text.VL53L1_RdWord
-                0x0000000008006eb8       0x3c VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006eb8                VL53L1_RdWord
+                0x0000000008006ec0       0x3c VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006ec0                VL53L1_RdWord
  .text.VL53L1_WaitUs
-                0x0000000008006ef4       0x12 VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006ef4                VL53L1_WaitUs
- *fill*         0x0000000008006f06        0x2 
+                0x0000000008006efc       0x12 VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006efc                VL53L1_WaitUs
+ *fill*         0x0000000008006f0e        0x2 
  .text.VL53L1_WaitValueMaskEx
-                0x0000000008006f08       0x7c VL53L1X_API/platform/vl53l1_platform.o
-                0x0000000008006f08                VL53L1_WaitValueMaskEx
+                0x0000000008006f10       0x7c VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008006f10                VL53L1_WaitValueMaskEx
  .text.Reset_Handler
-                0x0000000008006f84       0x50 startup/startup_stm32f411xe.o
-                0x0000000008006f84                Reset_Handler
+                0x0000000008006f8c       0x50 startup/startup_stm32f411xe.o
+                0x0000000008006f8c                Reset_Handler
  .text.Default_Handler
-                0x0000000008006fd4        0x2 startup/startup_stm32f411xe.o
-                0x0000000008006fd4                RTC_Alarm_IRQHandler
-                0x0000000008006fd4                EXTI2_IRQHandler
-                0x0000000008006fd4                SPI4_IRQHandler
-                0x0000000008006fd4                TIM1_CC_IRQHandler
-                0x0000000008006fd4                DMA2_Stream5_IRQHandler
-                0x0000000008006fd4                DMA1_Stream5_IRQHandler
-                0x0000000008006fd4                PVD_IRQHandler
-                0x0000000008006fd4                SDIO_IRQHandler
-                0x0000000008006fd4                TAMP_STAMP_IRQHandler
-                0x0000000008006fd4                EXTI3_IRQHandler
-                0x0000000008006fd4                TIM1_UP_TIM10_IRQHandler
-                0x0000000008006fd4                I2C3_ER_IRQHandler
-                0x0000000008006fd4                EXTI0_IRQHandler
-                0x0000000008006fd4                I2C2_EV_IRQHandler
-                0x0000000008006fd4                DMA1_Stream2_IRQHandler
-                0x0000000008006fd4                FPU_IRQHandler
-                0x0000000008006fd4                DMA2_Stream2_IRQHandler
-                0x0000000008006fd4                SPI1_IRQHandler
-                0x0000000008006fd4                TIM1_BRK_TIM9_IRQHandler
-                0x0000000008006fd4                DMA2_Stream3_IRQHandler
-                0x0000000008006fd4                USART6_IRQHandler
-                0x0000000008006fd4                DMA2_Stream0_IRQHandler
-                0x0000000008006fd4                TIM4_IRQHandler
-                0x0000000008006fd4                I2C1_EV_IRQHandler
-                0x0000000008006fd4                DMA1_Stream6_IRQHandler
-                0x0000000008006fd4                DMA1_Stream1_IRQHandler
-                0x0000000008006fd4                TIM3_IRQHandler
-                0x0000000008006fd4                RCC_IRQHandler
-                0x0000000008006fd4                Default_Handler
-                0x0000000008006fd4                EXTI15_10_IRQHandler
-                0x0000000008006fd4                ADC_IRQHandler
-                0x0000000008006fd4                DMA1_Stream7_IRQHandler
-                0x0000000008006fd4                SPI5_IRQHandler
-                0x0000000008006fd4                TIM5_IRQHandler
-                0x0000000008006fd4                DMA2_Stream7_IRQHandler
-                0x0000000008006fd4                I2C3_EV_IRQHandler
-                0x0000000008006fd4                EXTI9_5_IRQHandler
-                0x0000000008006fd4                RTC_WKUP_IRQHandler
-                0x0000000008006fd4                SPI2_IRQHandler
-                0x0000000008006fd4                DMA1_Stream0_IRQHandler
-                0x0000000008006fd4                EXTI4_IRQHandler
-                0x0000000008006fd4                WWDG_IRQHandler
-                0x0000000008006fd4                TIM2_IRQHandler
-                0x0000000008006fd4                OTG_FS_WKUP_IRQHandler
-                0x0000000008006fd4                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0000000008006fd4                EXTI1_IRQHandler
-                0x0000000008006fd4                USART2_IRQHandler
-                0x0000000008006fd4                I2C2_ER_IRQHandler
-                0x0000000008006fd4                DMA2_Stream1_IRQHandler
-                0x0000000008006fd4                FLASH_IRQHandler
-                0x0000000008006fd4                DMA2_Stream4_IRQHandler
-                0x0000000008006fd4                SPI3_IRQHandler
-                0x0000000008006fd4                DMA1_Stream4_IRQHandler
-                0x0000000008006fd4                I2C1_ER_IRQHandler
-                0x0000000008006fd4                DMA2_Stream6_IRQHandler
-                0x0000000008006fd4                DMA1_Stream3_IRQHandler
- *fill*         0x0000000008006fd6        0x2 
+                0x0000000008006fdc        0x2 startup/startup_stm32f411xe.o
+                0x0000000008006fdc                RTC_Alarm_IRQHandler
+                0x0000000008006fdc                EXTI2_IRQHandler
+                0x0000000008006fdc                SPI4_IRQHandler
+                0x0000000008006fdc                TIM1_CC_IRQHandler
+                0x0000000008006fdc                DMA2_Stream5_IRQHandler
+                0x0000000008006fdc                DMA1_Stream5_IRQHandler
+                0x0000000008006fdc                PVD_IRQHandler
+                0x0000000008006fdc                SDIO_IRQHandler
+                0x0000000008006fdc                TAMP_STAMP_IRQHandler
+                0x0000000008006fdc                EXTI3_IRQHandler
+                0x0000000008006fdc                TIM1_UP_TIM10_IRQHandler
+                0x0000000008006fdc                I2C3_ER_IRQHandler
+                0x0000000008006fdc                EXTI0_IRQHandler
+                0x0000000008006fdc                I2C2_EV_IRQHandler
+                0x0000000008006fdc                DMA1_Stream2_IRQHandler
+                0x0000000008006fdc                FPU_IRQHandler
+                0x0000000008006fdc                DMA2_Stream2_IRQHandler
+                0x0000000008006fdc                SPI1_IRQHandler
+                0x0000000008006fdc                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008006fdc                DMA2_Stream3_IRQHandler
+                0x0000000008006fdc                USART6_IRQHandler
+                0x0000000008006fdc                DMA2_Stream0_IRQHandler
+                0x0000000008006fdc                TIM4_IRQHandler
+                0x0000000008006fdc                I2C1_EV_IRQHandler
+                0x0000000008006fdc                DMA1_Stream6_IRQHandler
+                0x0000000008006fdc                DMA1_Stream1_IRQHandler
+                0x0000000008006fdc                TIM3_IRQHandler
+                0x0000000008006fdc                RCC_IRQHandler
+                0x0000000008006fdc                Default_Handler
+                0x0000000008006fdc                EXTI15_10_IRQHandler
+                0x0000000008006fdc                ADC_IRQHandler
+                0x0000000008006fdc                DMA1_Stream7_IRQHandler
+                0x0000000008006fdc                SPI5_IRQHandler
+                0x0000000008006fdc                TIM5_IRQHandler
+                0x0000000008006fdc                DMA2_Stream7_IRQHandler
+                0x0000000008006fdc                I2C3_EV_IRQHandler
+                0x0000000008006fdc                EXTI9_5_IRQHandler
+                0x0000000008006fdc                RTC_WKUP_IRQHandler
+                0x0000000008006fdc                SPI2_IRQHandler
+                0x0000000008006fdc                DMA1_Stream0_IRQHandler
+                0x0000000008006fdc                EXTI4_IRQHandler
+                0x0000000008006fdc                WWDG_IRQHandler
+                0x0000000008006fdc                TIM2_IRQHandler
+                0x0000000008006fdc                OTG_FS_WKUP_IRQHandler
+                0x0000000008006fdc                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008006fdc                EXTI1_IRQHandler
+                0x0000000008006fdc                USART2_IRQHandler
+                0x0000000008006fdc                I2C2_ER_IRQHandler
+                0x0000000008006fdc                DMA2_Stream1_IRQHandler
+                0x0000000008006fdc                FLASH_IRQHandler
+                0x0000000008006fdc                DMA2_Stream4_IRQHandler
+                0x0000000008006fdc                SPI3_IRQHandler
+                0x0000000008006fdc                DMA1_Stream4_IRQHandler
+                0x0000000008006fdc                I2C1_ER_IRQHandler
+                0x0000000008006fdc                DMA2_Stream6_IRQHandler
+                0x0000000008006fdc                DMA1_Stream3_IRQHandler
+ *fill*         0x0000000008006fde        0x2 
  .text.__libc_init_array
-                0x0000000008006fd8       0x48 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-init.o)
-                0x0000000008006fd8                __libc_init_array
- .text.malloc   0x0000000008007020       0x10 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-malloc.o)
-                0x0000000008007020                malloc
- .text.free     0x0000000008007030       0x10 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-malloc.o)
-                0x0000000008007030                free
- .text.memcpy   0x0000000008007040       0x16 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000008007040                memcpy
- .text.memset   0x0000000008007056       0x10 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-memset.o)
-                0x0000000008007056                memset
- *fill*         0x0000000008007066        0x2 
- .text._free_r  0x0000000008007068       0x9c /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-freer.o)
-                0x0000000008007068                _free_r
+                0x0000000008006fe0       0x48 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-init.o)
+                0x0000000008006fe0                __libc_init_array
+ .text.malloc   0x0000000008007028       0x10 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-malloc.o)
+                0x0000000008007028                malloc
+ .text.free     0x0000000008007038       0x10 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-malloc.o)
+                0x0000000008007038                free
+ .text.memcpy   0x0000000008007048       0x16 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000008007048                memcpy
+ .text.memset   0x000000000800705e       0x10 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-memset.o)
+                0x000000000800705e                memset
+ *fill*         0x000000000800706e        0x2 
+ .text._free_r  0x0000000008007070       0x9c /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-freer.o)
+                0x0000000008007070                _free_r
  .text._malloc_r
-                0x0000000008007104       0xbc /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000008007104                _malloc_r
- .text._sbrk_r  0x00000000080071c0       0x20 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-sbrkr.o)
-                0x00000000080071c0                _sbrk_r
- .text.sprintf  0x00000000080071e0       0x48 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-sprintf.o)
-                0x00000000080071e0                sprintf
-                0x00000000080071e0                siprintf
- .text.strncpy  0x0000000008007228       0x2a /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-strncpy.o)
-                0x0000000008007228                strncpy
+                0x000000000800710c       0xbc /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-mallocr.o)
+                0x000000000800710c                _malloc_r
+ .text._sbrk_r  0x00000000080071c8       0x20 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-sbrkr.o)
+                0x00000000080071c8                _sbrk_r
+ .text.sprintf  0x00000000080071e8       0x48 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-sprintf.o)
+                0x00000000080071e8                sprintf
+                0x00000000080071e8                siprintf
+ .text.strncpy  0x0000000008007230       0x2a /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-strncpy.o)
+                0x0000000008007230                strncpy
  .text.__malloc_lock
-                0x0000000008007252        0x2 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-mlock.o)
-                0x0000000008007252                __malloc_lock
+                0x000000000800725a        0x2 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-mlock.o)
+                0x000000000800725a                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008007254        0x2 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-mlock.o)
-                0x0000000008007254                __malloc_unlock
+                0x000000000800725c        0x2 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-mlock.o)
+                0x000000000800725c                __malloc_unlock
  .text.__ssputs_r
-                0x0000000008007256       0xb6 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x0000000008007256                __ssputs_r
+                0x000000000800725e       0xb6 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000800725e                __ssputs_r
  .text._svfprintf_r
-                0x000000000800730c      0x1e8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x000000000800730c                _svfprintf_r
-                0x000000000800730c                _svfiprintf_r
+                0x0000000008007314      0x1e8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008007314                _svfprintf_r
+                0x0000000008007314                _svfiprintf_r
  .text._printf_common
-                0x00000000080074f4       0xec /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00000000080074f4                _printf_common
+                0x00000000080074fc       0xec /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000000080074fc                _printf_common
  .text._printf_i
-                0x00000000080075e0      0x240 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00000000080075e0                _printf_i
- .text.memmove  0x0000000008007820       0x34 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-memmove.o)
-                0x0000000008007820                memmove
+                0x00000000080075e8      0x240 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000000080075e8                _printf_i
+ .text.memmove  0x0000000008007828       0x34 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-memmove.o)
+                0x0000000008007828                memmove
  .text._realloc_r
-                0x0000000008007854       0x4c /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-reallocr.o)
-                0x0000000008007854                _realloc_r
+                0x000000000800785c       0x4c /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-reallocr.o)
+                0x000000000800785c                _realloc_r
  .text._malloc_usable_size_r
-                0x00000000080078a0       0x12 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-msizer.o)
-                0x00000000080078a0                _malloc_usable_size_r
- *fill*         0x00000000080078b2        0x2 
- .text._sbrk    0x00000000080078b4       0x1c /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libnosys.a(sbrk.o)
-                0x00000000080078b4                _sbrk
+                0x00000000080078a8       0x12 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-msizer.o)
+                0x00000000080078a8                _malloc_usable_size_r
+ *fill*         0x00000000080078ba        0x2 
+ .text._sbrk    0x00000000080078bc       0x1c /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libnosys.a(sbrk.o)
+                0x00000000080078bc                _sbrk
  *(.glue_7)
- .glue_7        0x00000000080078d0        0x0 linker stubs
+ .glue_7        0x00000000080078d8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00000000080078d0        0x0 linker stubs
+ .glue_7t       0x00000000080078d8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00000000080078d0        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+ .eh_frame      0x00000000080078d8        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
  *(.init)
- .init          0x00000000080078d0        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
-                0x00000000080078d0                _init
- .init          0x00000000080078d4        0x8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
+ .init          0x00000000080078d8        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
+                0x00000000080078d8                _init
+ .init          0x00000000080078dc        0x8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
  *(.fini)
- .fini          0x00000000080078dc        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
-                0x00000000080078dc                _fini
- .fini          0x00000000080078e0        0x8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
-                0x00000000080078e8                . = ALIGN (0x4)
-                0x00000000080078e8                _etext = .
+ .fini          0x00000000080078e4        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
+                0x00000000080078e4                _fini
+ .fini          0x00000000080078e8        0x8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
+                0x00000000080078f0                . = ALIGN (0x4)
+                0x00000000080078f0                _etext = .
 
-.vfp11_veneer   0x00000000080078e8        0x0
- .vfp11_veneer  0x00000000080078e8        0x0 linker stubs
+.vfp11_veneer   0x00000000080078f0        0x0
+ .vfp11_veneer  0x00000000080078f0        0x0 linker stubs
 
-.v4_bx          0x00000000080078e8        0x0
- .v4_bx         0x00000000080078e8        0x0 linker stubs
+.v4_bx          0x00000000080078f0        0x0
+ .v4_bx         0x00000000080078f0        0x0 linker stubs
 
-.iplt           0x00000000080078e8        0x0
- .iplt          0x00000000080078e8        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+.iplt           0x00000000080078f0        0x0
+ .iplt          0x00000000080078f0        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.rodata         0x00000000080078e8      0x360
-                0x00000000080078e8                . = ALIGN (0x4)
+.rodata         0x00000000080078f0      0x360
+                0x00000000080078f0                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.enableSensor.str1.1
-                0x00000000080078e8      0x254 Src/main.o
+                0x00000000080078f0      0x254 Src/main.o
  .rodata.main.str1.1
-                0x0000000008007b3c       0x2c Src/main.o
+                0x0000000008007b44       0x2c Src/main.o
  .rodata.scan.str1.1
-                0x0000000008007b68       0x16 Src/main.o
+                0x0000000008007b70       0x16 Src/main.o
  .rodata.AHBPrescTable
-                0x0000000008007b7e       0x10 Src/system_stm32f4xx.o
-                0x0000000008007b7e                AHBPrescTable
+                0x0000000008007b86       0x10 Src/system_stm32f4xx.o
+                0x0000000008007b86                AHBPrescTable
  .rodata.APBPrescTable
-                0x0000000008007b8e        0x8 Src/system_stm32f4xx.o
-                0x0000000008007b8e                APBPrescTable
+                0x0000000008007b96        0x8 Src/system_stm32f4xx.o
+                0x0000000008007b96                APBPrescTable
  .rodata.CSWTCH.39
-                0x0000000008007b96        0x4 Src/usbd_conf.o
+                0x0000000008007b9e        0x4 Src/usbd_conf.o
  .rodata.USBD_LL_Init.str1.1
-                0x0000000008007b9a       0x13 Src/usbd_conf.o
+                0x0000000008007ba2       0x13 Src/usbd_conf.o
  .rodata.USBD_FS_ConfigStrDescriptor.str1.1
-                0x0000000008007bad        0xb Src/usbd_desc.o
+                0x0000000008007bb5        0xb Src/usbd_desc.o
  .rodata.USBD_FS_InterfaceStrDescriptor.str1.1
-                0x0000000008007bb8        0xe Src/usbd_desc.o
+                0x0000000008007bc0        0xe Src/usbd_desc.o
  .rodata.USBD_FS_ManufacturerStrDescriptor.str1.1
-                0x0000000008007bc6       0x13 Src/usbd_desc.o
+                0x0000000008007bce       0x13 Src/usbd_desc.o
  .rodata.USBD_FS_ProductStrDescriptor.str1.1
-                0x0000000008007bd9       0x16 Src/usbd_desc.o
+                0x0000000008007be1       0x16 Src/usbd_desc.o
  .rodata.USBD_FS_SerialStrDescriptor.str1.1
-                0x0000000008007bef        0xd Src/usbd_desc.o
+                0x0000000008007bf7        0xd Src/usbd_desc.o
  .rodata.CSWTCH.70
-                0x0000000008007bfc       0x10 VL53L1X_API/core/vl53l1_api.o
+                0x0000000008007c04       0x10 VL53L1X_API/core/vl53l1_api.o
  .rodata.CSWTCH.47
-                0x0000000008007c0c        0x6 VL53L1X_API/core/vl53l1_api_core.o
+                0x0000000008007c14        0x6 VL53L1X_API/core/vl53l1_api_core.o
  .rodata.VL53L1_WaitValueMaskEx.str1.1
-                0x0000000008007c12        0xd VL53L1X_API/platform/vl53l1_platform.o
+                0x0000000008007c1a        0xd VL53L1X_API/platform/vl53l1_platform.o
                                           0x1 (size before relaxing)
  .rodata._svfprintf_r.str1.1
-                0x0000000008007c12       0x11 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000008007c1a       0x11 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x0000000008007c23       0x22 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0000000008007c48                . = ALIGN (0x4)
- *fill*         0x0000000008007c45        0x3 
+                0x0000000008007c2b       0x22 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000008007c50                . = ALIGN (0x4)
+ *fill*         0x0000000008007c4d        0x3 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0000000008007c48        0x8
-                0x0000000008007c48                __exidx_start = .
+.ARM            0x0000000008007c50        0x8
+                0x0000000008007c50                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0000000008007c48        0x8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/libgcc.a(_udivmoddi4.o)
-                0x0000000008007c50                __exidx_end = .
+ .ARM.exidx     0x0000000008007c50        0x8 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/libgcc.a(_udivmoddi4.o)
+                0x0000000008007c58                __exidx_end = .
 
-.rel.dyn        0x0000000008007c50        0x0
- .rel.iplt      0x0000000008007c50        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+.rel.dyn        0x0000000008007c58        0x0
+ .rel.iplt      0x0000000008007c58        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.preinit_array  0x0000000008007c50        0x0
-                0x0000000008007c50                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x0000000008007c58        0x0
+                0x0000000008007c58                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0000000008007c50                PROVIDE (__preinit_array_end, .)
+                0x0000000008007c58                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0000000008007c50        0x4
-                0x0000000008007c50                PROVIDE (__init_array_start, .)
+.init_array     0x0000000008007c58        0x4
+                0x0000000008007c58                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008007c50        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
-                0x0000000008007c54                PROVIDE (__init_array_end, .)
+ .init_array    0x0000000008007c58        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+                0x0000000008007c5c                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0000000008007c54        0x4
+.fini_array     0x0000000008007c5c        0x4
                 [!provide]                        PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008007c54        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+ .fini_array    0x0000000008007c5c        0x4 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end, .)
-                0x0000000008007c58                _sidata = LOADADDR (.data)
+                0x0000000008007c60                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x224 load address 0x0000000008007c58
+.data           0x0000000020000000      0x224 load address 0x0000000008007c60
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -2706,11 +2706,11 @@ LOAD /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu
                 0x0000000020000224                . = ALIGN (0x4)
                 0x0000000020000224                _edata = .
 
-.igot.plt       0x0000000020000224        0x0 load address 0x0000000008007e7c
+.igot.plt       0x0000000020000224        0x0 load address 0x0000000008007e84
  .igot.plt      0x0000000020000224        0x0 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
                 0x0000000020000224                . = ALIGN (0x4)
 
-.bss            0x0000000020000224     0x47b8 load address 0x0000000008007e7c
+.bss            0x0000000020000224     0x47b8 load address 0x0000000008007e84
                 0x0000000020000224                _sbss = .
                 0x0000000020000224                __bss_start__ = _sbss
  *(.bss)
@@ -2765,7 +2765,7 @@ LOAD /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu
                 0x00000000200049dc                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x00000000200049dc      0x600 load address 0x0000000008007e7c
+                0x00000000200049dc      0x600 load address 0x0000000008007e84
                 0x00000000200049dc                . = ALIGN (0x4)
                 0x00000000200049dc                PROVIDE (end, .)
                 [!provide]                        PROVIDE (_end, .)
@@ -2901,7 +2901,7 @@ LOAD /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu
                 0x0000000000000bb9       0x22 /opt/truestudio/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(53xLidar.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x3e618
+.debug_info     0x0000000000000000    0x3e62c
  .debug_info    0x0000000000000000     0x1180 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_info    0x0000000000001180     0x16b4 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
  .debug_info    0x0000000000002834     0x1254 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
@@ -2917,23 +2917,23 @@ OUTPUT(53xLidar.elf elf32-littlearm)
  .debug_info    0x00000000000125c8     0x1499 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .debug_info    0x0000000000013a61      0xfc5 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
  .debug_info    0x0000000000014a26      0xc51 Src/WS2812.o
- .debug_info    0x0000000000015677     0x4a78 Src/main.o
- .debug_info    0x000000000001a0ef     0x1ba2 Src/stm32f4xx_hal_msp.o
- .debug_info    0x000000000001bc91     0x1225 Src/stm32f4xx_it.o
- .debug_info    0x000000000001ceb6      0xd46 Src/system_stm32f4xx.o
- .debug_info    0x000000000001dbfc      0xe80 Src/usb_device.o
- .debug_info    0x000000000001ea7c     0x108f Src/usbd_cdc_if.o
- .debug_info    0x000000000001fb0b     0x221d Src/usbd_conf.o
- .debug_info    0x0000000000021d28      0xd81 Src/usbd_desc.o
- .debug_info    0x0000000000022aa9     0x5e9b VL53L1X_API/core/vl53l1_api.o
- .debug_info    0x0000000000028944     0x4cc1 VL53L1X_API/core/vl53l1_api_core.o
- .debug_info    0x000000000002d605     0x218b VL53L1X_API/core/vl53l1_api_preset_modes.o
- .debug_info    0x000000000002f790     0x45d2 VL53L1X_API/core/vl53l1_core.o
- .debug_info    0x0000000000033d62      0xa08 VL53L1X_API/core/vl53l1_core_support.o
- .debug_info    0x000000000003476a     0x3b83 VL53L1X_API/core/vl53l1_register_funcs.o
- .debug_info    0x00000000000382ed     0x2f9b VL53L1X_API/core/vl53l1_wait.o
- .debug_info    0x000000000003b288     0x3322 VL53L1X_API/platform/vl53l1_platform.o
- .debug_info    0x000000000003e5aa       0x6e startup/startup_stm32f411xe.o
+ .debug_info    0x0000000000015677     0x4a8c Src/main.o
+ .debug_info    0x000000000001a103     0x1ba2 Src/stm32f4xx_hal_msp.o
+ .debug_info    0x000000000001bca5     0x1225 Src/stm32f4xx_it.o
+ .debug_info    0x000000000001ceca      0xd46 Src/system_stm32f4xx.o
+ .debug_info    0x000000000001dc10      0xe80 Src/usb_device.o
+ .debug_info    0x000000000001ea90     0x108f Src/usbd_cdc_if.o
+ .debug_info    0x000000000001fb1f     0x221d Src/usbd_conf.o
+ .debug_info    0x0000000000021d3c      0xd81 Src/usbd_desc.o
+ .debug_info    0x0000000000022abd     0x5e9b VL53L1X_API/core/vl53l1_api.o
+ .debug_info    0x0000000000028958     0x4cc1 VL53L1X_API/core/vl53l1_api_core.o
+ .debug_info    0x000000000002d619     0x218b VL53L1X_API/core/vl53l1_api_preset_modes.o
+ .debug_info    0x000000000002f7a4     0x45d2 VL53L1X_API/core/vl53l1_core.o
+ .debug_info    0x0000000000033d76      0xa08 VL53L1X_API/core/vl53l1_core_support.o
+ .debug_info    0x000000000003477e     0x3b83 VL53L1X_API/core/vl53l1_register_funcs.o
+ .debug_info    0x0000000000038301     0x2f9b VL53L1X_API/core/vl53l1_wait.o
+ .debug_info    0x000000000003b29c     0x3322 VL53L1X_API/platform/vl53l1_platform.o
+ .debug_info    0x000000000003e5be       0x6e startup/startup_stm32f411xe.o
 
 .debug_abbrev   0x0000000000000000     0x5bd4
  .debug_abbrev  0x0000000000000000      0x308 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
@@ -2969,7 +2969,7 @@ OUTPUT(53xLidar.elf elf32-littlearm)
  .debug_abbrev  0x0000000000005849      0x379 VL53L1X_API/platform/vl53l1_platform.o
  .debug_abbrev  0x0000000000005bc2       0x12 startup/startup_stm32f411xe.o
 
-.debug_loc      0x0000000000000000    0x14364
+.debug_loc      0x0000000000000000    0x1438a
  .debug_loc     0x0000000000000000      0x11b Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_loc     0x000000000000011b      0x4fb Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
  .debug_loc     0x0000000000000616      0x727 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
@@ -2985,20 +2985,20 @@ OUTPUT(53xLidar.elf elf32-littlearm)
  .debug_loc     0x0000000000008037      0x7cd Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .debug_loc     0x0000000000008804      0x23c Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
  .debug_loc     0x0000000000008a40      0x13d Src/WS2812.o
- .debug_loc     0x0000000000008b7d      0x444 Src/main.o
- .debug_loc     0x0000000000008fc1      0x164 Src/stm32f4xx_hal_msp.o
- .debug_loc     0x0000000000009125      0x11c Src/system_stm32f4xx.o
- .debug_loc     0x0000000000009241      0x10c Src/usbd_cdc_if.o
- .debug_loc     0x000000000000934d      0x95b Src/usbd_conf.o
- .debug_loc     0x0000000000009ca8      0x273 Src/usbd_desc.o
- .debug_loc     0x0000000000009f1b     0x337c VL53L1X_API/core/vl53l1_api.o
- .debug_loc     0x000000000000d297     0x2759 VL53L1X_API/core/vl53l1_api_core.o
- .debug_loc     0x000000000000f9f0      0xd75 VL53L1X_API/core/vl53l1_api_preset_modes.o
- .debug_loc     0x0000000000010765     0x1f34 VL53L1X_API/core/vl53l1_core.o
- .debug_loc     0x0000000000012699       0xbf VL53L1X_API/core/vl53l1_core_support.o
- .debug_loc     0x0000000000012758      0xc2c VL53L1X_API/core/vl53l1_register_funcs.o
- .debug_loc     0x0000000000013384      0x5e4 VL53L1X_API/core/vl53l1_wait.o
- .debug_loc     0x0000000000013968      0x9fc VL53L1X_API/platform/vl53l1_platform.o
+ .debug_loc     0x0000000000008b7d      0x46a Src/main.o
+ .debug_loc     0x0000000000008fe7      0x164 Src/stm32f4xx_hal_msp.o
+ .debug_loc     0x000000000000914b      0x11c Src/system_stm32f4xx.o
+ .debug_loc     0x0000000000009267      0x10c Src/usbd_cdc_if.o
+ .debug_loc     0x0000000000009373      0x95b Src/usbd_conf.o
+ .debug_loc     0x0000000000009cce      0x273 Src/usbd_desc.o
+ .debug_loc     0x0000000000009f41     0x337c VL53L1X_API/core/vl53l1_api.o
+ .debug_loc     0x000000000000d2bd     0x2759 VL53L1X_API/core/vl53l1_api_core.o
+ .debug_loc     0x000000000000fa16      0xd75 VL53L1X_API/core/vl53l1_api_preset_modes.o
+ .debug_loc     0x000000000001078b     0x1f34 VL53L1X_API/core/vl53l1_core.o
+ .debug_loc     0x00000000000126bf       0xbf VL53L1X_API/core/vl53l1_core_support.o
+ .debug_loc     0x000000000001277e      0xc2c VL53L1X_API/core/vl53l1_register_funcs.o
+ .debug_loc     0x00000000000133aa      0x5e4 VL53L1X_API/core/vl53l1_wait.o
+ .debug_loc     0x000000000001398e      0x9fc VL53L1X_API/platform/vl53l1_platform.o
 
 .debug_aranges  0x0000000000000000     0x1578
  .debug_aranges
@@ -3066,7 +3066,7 @@ OUTPUT(53xLidar.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000001550       0x28 startup/startup_stm32f411xe.o
 
-.debug_ranges   0x0000000000000000     0x1b70
+.debug_ranges   0x0000000000000000     0x1b80
  .debug_ranges  0x0000000000000000       0xc8 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_ranges  0x00000000000000c8      0x138 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
  .debug_ranges  0x0000000000000200       0xc8 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
@@ -3082,25 +3082,25 @@ OUTPUT(53xLidar.elf elf32-littlearm)
  .debug_ranges  0x0000000000000c28       0xc0 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .debug_ranges  0x0000000000000ce8       0x40 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
  .debug_ranges  0x0000000000000d28       0x70 Src/WS2812.o
- .debug_ranges  0x0000000000000d98      0x1f8 Src/main.o
- .debug_ranges  0x0000000000000f90       0xa8 Src/stm32f4xx_hal_msp.o
- .debug_ranges  0x0000000000001038       0x48 Src/stm32f4xx_it.o
- .debug_ranges  0x0000000000001080       0x18 Src/system_stm32f4xx.o
- .debug_ranges  0x0000000000001098       0x10 Src/usb_device.o
- .debug_ranges  0x00000000000010a8       0x30 Src/usbd_cdc_if.o
- .debug_ranges  0x00000000000010d8      0x100 Src/usbd_conf.o
- .debug_ranges  0x00000000000011d8       0x40 Src/usbd_desc.o
- .debug_ranges  0x0000000000001218      0x2d0 VL53L1X_API/core/vl53l1_api.o
- .debug_ranges  0x00000000000014e8      0x1c8 VL53L1X_API/core/vl53l1_api_core.o
- .debug_ranges  0x00000000000016b0       0x98 VL53L1X_API/core/vl53l1_api_preset_modes.o
- .debug_ranges  0x0000000000001748      0x238 VL53L1X_API/core/vl53l1_core.o
- .debug_ranges  0x0000000000001980       0x20 VL53L1X_API/core/vl53l1_core_support.o
- .debug_ranges  0x00000000000019a0       0xd0 VL53L1X_API/core/vl53l1_register_funcs.o
- .debug_ranges  0x0000000000001a70       0x58 VL53L1X_API/core/vl53l1_wait.o
- .debug_ranges  0x0000000000001ac8       0x88 VL53L1X_API/platform/vl53l1_platform.o
- .debug_ranges  0x0000000000001b50       0x20 startup/startup_stm32f411xe.o
+ .debug_ranges  0x0000000000000d98      0x208 Src/main.o
+ .debug_ranges  0x0000000000000fa0       0xa8 Src/stm32f4xx_hal_msp.o
+ .debug_ranges  0x0000000000001048       0x48 Src/stm32f4xx_it.o
+ .debug_ranges  0x0000000000001090       0x18 Src/system_stm32f4xx.o
+ .debug_ranges  0x00000000000010a8       0x10 Src/usb_device.o
+ .debug_ranges  0x00000000000010b8       0x30 Src/usbd_cdc_if.o
+ .debug_ranges  0x00000000000010e8      0x100 Src/usbd_conf.o
+ .debug_ranges  0x00000000000011e8       0x40 Src/usbd_desc.o
+ .debug_ranges  0x0000000000001228      0x2d0 VL53L1X_API/core/vl53l1_api.o
+ .debug_ranges  0x00000000000014f8      0x1c8 VL53L1X_API/core/vl53l1_api_core.o
+ .debug_ranges  0x00000000000016c0       0x98 VL53L1X_API/core/vl53l1_api_preset_modes.o
+ .debug_ranges  0x0000000000001758      0x238 VL53L1X_API/core/vl53l1_core.o
+ .debug_ranges  0x0000000000001990       0x20 VL53L1X_API/core/vl53l1_core_support.o
+ .debug_ranges  0x00000000000019b0       0xd0 VL53L1X_API/core/vl53l1_register_funcs.o
+ .debug_ranges  0x0000000000001a80       0x58 VL53L1X_API/core/vl53l1_wait.o
+ .debug_ranges  0x0000000000001ad8       0x88 VL53L1X_API/platform/vl53l1_platform.o
+ .debug_ranges  0x0000000000001b60       0x20 startup/startup_stm32f411xe.o
 
-.debug_line     0x0000000000000000     0xb9bc
+.debug_line     0x0000000000000000     0xb9bd
  .debug_line    0x0000000000000000      0x414 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_line    0x0000000000000414      0x45e Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
  .debug_line    0x0000000000000872      0x579 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
@@ -3116,23 +3116,23 @@ OUTPUT(53xLidar.elf elf32-littlearm)
  .debug_line    0x00000000000054ab      0x3cc Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
  .debug_line    0x0000000000005877      0x2e2 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
  .debug_line    0x0000000000005b59      0x308 Src/WS2812.o
- .debug_line    0x0000000000005e61      0x671 Src/main.o
- .debug_line    0x00000000000064d2      0x3d4 Src/stm32f4xx_hal_msp.o
- .debug_line    0x00000000000068a6      0x2f9 Src/stm32f4xx_it.o
- .debug_line    0x0000000000006b9f      0x1f7 Src/system_stm32f4xx.o
- .debug_line    0x0000000000006d96      0x2bf Src/usb_device.o
- .debug_line    0x0000000000007055      0x2df Src/usbd_cdc_if.o
- .debug_line    0x0000000000007334      0x55b Src/usbd_conf.o
- .debug_line    0x000000000000788f      0x2c0 Src/usbd_desc.o
- .debug_line    0x0000000000007b4f      0xd03 VL53L1X_API/core/vl53l1_api.o
- .debug_line    0x0000000000008852      0xbcd VL53L1X_API/core/vl53l1_api_core.o
- .debug_line    0x000000000000941f      0x5f6 VL53L1X_API/core/vl53l1_api_preset_modes.o
- .debug_line    0x0000000000009a15      0xa71 VL53L1X_API/core/vl53l1_core.o
- .debug_line    0x000000000000a486      0x230 VL53L1X_API/core/vl53l1_core_support.o
- .debug_line    0x000000000000a6b6      0x87a VL53L1X_API/core/vl53l1_register_funcs.o
- .debug_line    0x000000000000af30      0x4fb VL53L1X_API/core/vl53l1_wait.o
- .debug_line    0x000000000000b42b      0x512 VL53L1X_API/platform/vl53l1_platform.o
- .debug_line    0x000000000000b93d       0x7f startup/startup_stm32f411xe.o
+ .debug_line    0x0000000000005e61      0x672 Src/main.o
+ .debug_line    0x00000000000064d3      0x3d4 Src/stm32f4xx_hal_msp.o
+ .debug_line    0x00000000000068a7      0x2f9 Src/stm32f4xx_it.o
+ .debug_line    0x0000000000006ba0      0x1f7 Src/system_stm32f4xx.o
+ .debug_line    0x0000000000006d97      0x2bf Src/usb_device.o
+ .debug_line    0x0000000000007056      0x2df Src/usbd_cdc_if.o
+ .debug_line    0x0000000000007335      0x55b Src/usbd_conf.o
+ .debug_line    0x0000000000007890      0x2c0 Src/usbd_desc.o
+ .debug_line    0x0000000000007b50      0xd03 VL53L1X_API/core/vl53l1_api.o
+ .debug_line    0x0000000000008853      0xbcd VL53L1X_API/core/vl53l1_api_core.o
+ .debug_line    0x0000000000009420      0x5f6 VL53L1X_API/core/vl53l1_api_preset_modes.o
+ .debug_line    0x0000000000009a16      0xa71 VL53L1X_API/core/vl53l1_core.o
+ .debug_line    0x000000000000a487      0x230 VL53L1X_API/core/vl53l1_core_support.o
+ .debug_line    0x000000000000a6b7      0x87a VL53L1X_API/core/vl53l1_register_funcs.o
+ .debug_line    0x000000000000af31      0x4fb VL53L1X_API/core/vl53l1_wait.o
+ .debug_line    0x000000000000b42c      0x512 VL53L1X_API/platform/vl53l1_platform.o
+ .debug_line    0x000000000000b93e       0x7f startup/startup_stm32f411xe.o
 
 .debug_str      0x0000000000000000     0xa7bd
  .debug_str     0x0000000000000000      0xd9c Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
