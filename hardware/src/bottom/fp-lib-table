@@ -2,4 +2,5 @@
   (lib (name custom-footprints)(type KiCad)(uri "$(KIPRJMOD)/custom-footprints.pretty")(options "")(descr ""))
   (lib (name Symbol)(type KiCad)(uri ${KISYSMOD}/Symbol.pretty)(options "")(descr ""))
   (lib (name Symbols)(type KiCad)(uri ${KISYSMOD}/Symbols.pretty)(options "")(descr ""))
+  (lib (name Connector_USB)(type KiCad)(uri C:/Users/valer/Documents/kicad-footprints/Connector_USB.pretty)(options "")(descr ""))
 )
