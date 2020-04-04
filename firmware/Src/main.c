@@ -50,11 +50,11 @@
 #include "stm32f4xx_hal.h"
 #include "usb_device.h"
 
+
+/* USER CODE BEGIN Includes */
 #include "vl53l1_api.h"
 
 #include "WS2812.h"
-
-/* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
@@ -89,9 +89,6 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
 struct Gpio {
 	GPIO_TypeDef * const port;
 	const uint16_t mask;
@@ -310,6 +307,9 @@ void updateLed() {
 	sendColors(ledColor, 4);
 }
 
+/* USER CODE END 0 */
+
+
 /**
  * @brief  The application entry point.
  *
@@ -336,6 +336,7 @@ int main(void) {
 
 	/* USER CODE END SysInit */
 
+
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
 	MX_I2C1_Init();
@@ -346,6 +347,7 @@ int main(void) {
 	MX_USART2_UART_Init();
 	MX_USB_DEVICE_Init();
 
+	/* USER CODE BEGIN */
 	// be sure to put all xshut to low
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3,
 			GPIO_PIN_RESET);
@@ -450,6 +452,7 @@ int main(void) {
 		}
 
 	}
+	/* USER CODE END */
 
 }
 
