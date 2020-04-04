@@ -1,0 +1,4 @@
+vl53l1_api_strings.c:83:14:VL53L1_get_range_status_string	24	static
+vl53l1_api_strings.c:131:14:VL53L1_get_pal_state_string	24	static
+vl53l1_api_strings.c:186:14:VL53L1_get_sequence_steps_info	24	static
+vl53l1_api_strings.c:240:14:VL53L1_get_limit_check_info	24	static

@@ -1,0 +1,4 @@
+vl53l1_api_calibration.c:104:14:VL53L1_run_ref_spad_char	64	static
+vl53l1_api_calibration.c:290:14:VL53L1_run_offset_calibration	216	static
+vl53l1_api_calibration.c:687:14:VL53L1_run_spad_rate_map	32	static
+vl53l1_api_calibration.c:779:14:VL53L1_run_device_test	32	static

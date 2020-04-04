@@ -1,0 +1,7 @@
+WS2812.c:7:6:sendReset	8	static
+WS2812.c:12:6:send0	8	static,ignoring_inline_asm
+WS2812.c:89:6:send1	8	static,ignoring_inline_asm
+WS2812.c:186:6:writeByte	24	static
+WS2812.c:198:6:writeColor	16	static
+WS2812.c:204:6:send1Color	16	static
+WS2812.c:208:6:sendColors	24	static

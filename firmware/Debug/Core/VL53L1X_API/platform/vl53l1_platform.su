@@ -1,0 +1,9 @@
+vl53l1_platform.c:41:8:VL53L1_WriteMulti	24	static
+vl53l1_platform.c:45:8:VL53L1_ReadMulti	24	static
+vl53l1_platform.c:49:8:VL53L1_WrByte	16	static
+vl53l1_platform.c:53:8:VL53L1_WrWord	16	static
+vl53l1_platform.c:57:8:VL53L1_WrDWord	16	static
+vl53l1_platform.c:61:8:VL53L1_RdByte	16	static
+vl53l1_platform.c:65:8:VL53L1_RdWord	16	static
+vl53l1_platform.c:69:8:VL53L1_RdDWord	16	static
+vl53l1_platform.c:73:8:VL53L1_WaitMs	16	static

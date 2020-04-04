@@ -1,0 +1,10 @@
+vl53l1_wait.c:88:14:VL53L1_wait_for_boot_completion	32	static
+vl53l1_wait.c:136:14:VL53L1_wait_for_firmware_ready	32	static
+vl53l1_wait.c:201:14:VL53L1_wait_for_range_completion	32	static
+vl53l1_wait.c:248:14:VL53L1_wait_for_test_completion	32	static
+vl53l1_wait.c:297:14:VL53L1_is_boot_complete	24	static
+vl53l1_wait.c:341:14:VL53L1_is_firmware_ready	24	static
+vl53l1_wait.c:366:14:VL53L1_is_new_data_ready	32	static
+vl53l1_wait.c:416:14:VL53L1_poll_for_boot_completion	32	static
+vl53l1_wait.c:458:14:VL53L1_poll_for_firmware_ready	40	static
+vl53l1_wait.c:516:14:VL53L1_poll_for_range_completion	40	static

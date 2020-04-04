@@ -1,6 +1,0 @@
-main.c:116:5:enableSensor	104	static
-main.c:260:6:scan	104	static
-main.c:286:6:updateLed	4	static
-main.c:460:6:SystemClock_Config	96	static
-main.c:318:5:main	168	static
-main.c:722:6:_Error_Handler	0	static
