@@ -89,151 +89,139 @@ GPIO_PIN_5 }, { GPIOA, GPIO_PIN_6 }, { GPIOA, GPIO_PIN_7 }, };
  */
 
 struct {
-	VL53L1_Dev_t chip;
+	uint16_t dev;
 	uint8_t valid;
 } sensors[16];
 
 int enableSensor(int i) {
 
-	sensors[i].chip.I2cDevAddr = 0x29 << 1;
-	if (i < 8) {
-		sensors[i].chip.I2cHandle = &hi2c1;
-	} else {
-		sensors[i].chip.I2cHandle = &hi2c2;
+	uint16_t dev = 0x29 << 1;
+	if (i >= 8) {
+		dev |= 1 << 0x100; //if 9th bit is 0 it will use I2C1,if 1 will use i2c2
 	}
-
-	sensors[i].valid = 0;
-
-	char buff[15];
-	sprintf(buff, "sensor: %d\n", i);
-	HAL_UART_Transmit(&huart1, buff, strlen(buff), 0xFFFF);
-
-	/*** VL53L1X Initialization ***/
-	VL53L1_Error err;
-	err = VL53L1_WaitDeviceBooted(&sensors[i].chip);
-	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_WaitDeviceBooted failed    \n";
+	
+	VL53L1X_Error err;
+	uint8_t is_booted = 0;
+	do{
+		err = VL53L1X_BootState(dev, &is_booted);
+		HAL_delay(2);
+	}while(!is_booted && err == VL53L1X_ERROR_NONE);
+	
+	if (err != VL53L1X_ERROR_NONE) {
+		uint8_t msg[] = "VL53L1X_BootState failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 1;
 	} else {
-		uint8_t msg[] = "VL53L1_WaitDeviceBooted OK  \n";
+		uint8_t msg[] = "VL53L1X_BootState OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
-
-	err = VL53L1_DataInit(&sensors[i].chip);
-	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_DataInit failed    \n";
+	
+	/* Sensor Initialization */
+	err = VL53L1X_SensorInit(dev);
+	if (err != VL53L1X_ERROR_NONE) {
+		uint8_t msg[] = "VL53L1X_SensorInit failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 3;
 	} else {
-		uint8_t msg[] = "VL53L1_DataInit OK  \n";
+		uint8_t msg[] = "VL53L1X_SensorInit OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
-
-	err = VL53L1_SetDeviceAddress(&sensors[i].chip, (0x29 + i + 1) << 1);
-	sensors[i].chip.I2cDevAddr = (0x29 + i + 1) << 1; //change address even in case of error to reduce miss-talk
-	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_SetDeviceAddress failed    \n";
+	
+	/* Modify the default configuration */
+	err = VL53L1X_SetI2CAddress(dev, (0x29 + i + 1) << 1);
+	dev = (0x29 + i + 1) << 1;
+	if (i >= 8) {
+		dev |= 1 << 0x100; //if 9th bit is 0 it will use I2C1,if 1 will use i2c2
+	}
+	if (err != VL53L1X_ERROR_NONE) {
+		uint8_t msg[] = "VL53L1X_SetI2CAddress failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 2;
 	} else {
-		uint8_t msg[] = "VL53L1_SetDeviceAddress OK  \n";
+		uint8_t msg[] = "VL53L1X_SetI2CAddress OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
-
-	err = VL53L1_StaticInit(&sensors[i].chip);
-	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_StaticInit failed    \n";
-		uint8_t len = sizeof(msg) - 1;
-		msg[len - 1 - 1] = i + '0';
-		msg[len - 3 - 1] = err + '0';
-		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
-		return 4;
-	} else {
-		uint8_t msg[] = "VL53L1_StaticInit OK  \n";
-		uint8_t len = sizeof(msg) - 1;
-		msg[len - 1 - 1] = i + '0';
-		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
-	}
-
-	err = VL53L1_SetDistanceMode(&sensors[i].chip, VL53L1_DISTANCEMODE_LONG);
-	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_SetDistanceMode failed    \n";
+	
+	err = VL53L1X_SetDistanceMode(dev, 2); // 2 = VL53L1X_DISTANCEMODE_LONG
+	if (err != VL53L1X_ERROR_NONE) {
+		uint8_t msg[] = "VL53L1X_SetDistanceMode failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 5;
 	} else {
-		uint8_t msg[] = "VL53L1_SetDistanceMode OK  \n";
+		uint8_t msg[] = "VL53L1X_SetDistanceMode OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
 
-	err = VL53L1_SetMeasurementTimingBudgetMicroSeconds(&sensors[i].chip,
-			20000);
-	if (err != VL53L1_ERROR_NONE) {
+	err = VL53L1X_SetTimingBudgetInMs(dev, 20);
+	if (err != VL53L1X_ERROR_NONE) {
 		uint8_t msg[] =
-				"VL53L1_SetMeasurementTimingBudgetMicroSeconds failed    \n";
+				"VL53L1X_SetTimingBudgetInMs failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 6;
 	} else {
-		uint8_t msg[] = "VL53L1_SetMeasurementTimingBudgetMicroSeconds OK  \n";
+		uint8_t msg[] = "VL53L1X_SetTimingBudgetInMs OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
 
-	err = VL53L1_SetInterMeasurementPeriodMilliSeconds(&sensors[i].chip, 25);
-	if (err != VL53L1_ERROR_NONE) {
+	err = VL53L1X_SetInterMeasurementInMs(dev, 25);
+	if (err != VL53L1X_ERROR_NONE) {
 		uint8_t msg[] =
-				"VL53L1_SetInterMeasurementPeriodMilliSeconds failed    \n";
+				"VL53L1X_SetInterMeasurementInMs failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 7;
 	} else {
-		uint8_t msg[] = "VL53L1_SetInterMeasurementPeriodMilliSeconds OK  \n";
+		uint8_t msg[] = "VL53L1X_SetInterMeasurementInMs OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
 
-	err = VL53L1_StartMeasurement(&sensors[i].chip);
-	if (err != VL53L1_ERROR_NONE) {
-		uint8_t msg[] = "VL53L1_StartMeasurement failed    \n";
+	err = VL53L1X_StartRanging(dev);
+	if (err != VL53L1X_ERROR_NONE) {
+		uint8_t msg[] = "VL53L1X_StartRanging failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		msg[len - 3 - 1] = err + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 		return 8;
 	} else {
-		uint8_t msg[] = "VL53L1_StartMeasurement OK  \n";
+		uint8_t msg[] = "VL53L1X_StartRanging OK  \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
 		HAL_UART_Transmit(&huart1, msg, len, 0xFFFF);
 	}
+	
+	sensors[i].dev = dev;
 	sensors[i].valid = 1;
+	
 	return 0;
 }
 
@@ -368,38 +356,49 @@ int main(void)
 	uint8_t msg[5]; // ~, 3 byte payload, checksum
 	uint32_t start = HAL_GetTick();
 	while (1) {
-
+	
 		for (int i = 0; i < 16; i++) {
-
-			VL53L1_RangingMeasurementData_t rangingData;
-
-			uint8_t ready = 0;
+		
 			if (sensors[i].valid) {
-				VL53L1_Error err = VL53L1_GetMeasurementDataReady(
-						&sensors[i].chip, &ready);
+				uint8_t ready = 0;
+				VL53L1X_ERROR err = VL53L1X_CheckForDataReady(sensors[i].dev, &ready);
+				
 				if (!err && ready) {
-
-					VL53L1_GetRangingMeasurementData(&sensors[i].chip,
-							&rangingData);
-
-					VL53L1_ClearInterruptAndStartMeasurement(&sensors[i].chip);
+					uint8_t range_status;
+					err = VL53L1X_GetRangeStatus(sensors[i].dev, &range_status);
+					if (err) {
+						sprintf((char*) buff, "VL53L1X_GetRangeStatus error %d on sensor %d\n", err, i);
+						HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
+						continue;
+					}
+					
+					uint16_t distance_mm;
+					err = VL53L1X_GetDistance(sensors[i].dev, &distance_mm);
+					if (err) {
+						sprintf((char*) buff, "VL53L1X_GetDistance error %d on sensor %d\n", err, i);
+						HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
+						continue;
+					}
+					
+					err = VL53L1X_ClearInterrupt(sensors[i].dev);
+					if (err) {
+						sprintf((char*) buff, "VL53L1X_ClearInterrupt error %d on sensor %d\n", err, i);
+						HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
+						continue;
+					}
 
 					msg[0] = '~';
 					msg[1] = i;
-					msg[2] = rangingData.RangeMilliMeter;
-					msg[3] = rangingData.RangeMilliMeter >> 8;
+					msg[2] = distance_mm;
+					msg[3] = distance_mm >> 8;
 					msg[4] = msg[0] + msg[1] + msg[2] + msg[3];
 
-					//HAL_UART_Transmit(&huart1, msg, sizeof(msg), 0xFFFF);
-
-					sprintf((char*) buff, "%x\t%d\n", i,
-							rangingData.RangeMilliMeter);
-					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff),
-							0xFFFF);
+					sprintf((char*) buff, "%x\t%d\n", i, distance_mm);
+					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
 
 					fps++;
 				} else if (err) {
-					sprintf((char*) buff, "error %d reading sensor %d\n", err, i);
+					sprintf((char*) buff, "VL53L1X_CheckForDataReady error %d on sensor %d\n", err, i);
 					HAL_UART_Transmit(&huart1, buff, strlen((char*) buff), 0xFFFF);
 					/*
 					 maxErr--;
