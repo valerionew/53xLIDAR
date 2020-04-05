@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "vl53l1_api.h"
+#include "VL53L1X_api.h"
 
 #include "WS2812.h"
 /* USER CODE END Includes */
@@ -97,17 +97,17 @@ int enableSensor(int i) {
 
 	uint16_t dev = 0x29 << 1;
 	if (i >= 8) {
-		dev |= 1 << 0x100; //if 9th bit is 0 it will use I2C1,if 1 will use i2c2
+		dev |= 0x100; //if 9th bit is 0 it will use I2C1,if 1 will use i2c2
 	}
 	
 	VL53L1X_Error err;
 	uint8_t is_booted = 0;
 	do{
 		err = VL53L1X_BootState(dev, &is_booted);
-		HAL_delay(2);
-	}while(!is_booted && err == VL53L1X_ERROR_NONE);
+		HAL_Delay(2);
+	}while(!is_booted && err == VL53L1_ERROR_NONE);
 	
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] = "VL53L1X_BootState failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -123,7 +123,7 @@ int enableSensor(int i) {
 	
 	/* Sensor Initialization */
 	err = VL53L1X_SensorInit(dev);
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] = "VL53L1X_SensorInit failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -141,9 +141,9 @@ int enableSensor(int i) {
 	err = VL53L1X_SetI2CAddress(dev, (0x29 + i + 1) << 1);
 	dev = (0x29 + i + 1) << 1;
 	if (i >= 8) {
-		dev |= 1 << 0x100; //if 9th bit is 0 it will use I2C1,if 1 will use i2c2
+		dev |= 0x100; //if 9th bit is 0 it will use I2C1,if 1 will use i2c2
 	}
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] = "VL53L1X_SetI2CAddress failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -158,7 +158,7 @@ int enableSensor(int i) {
 	}
 	
 	err = VL53L1X_SetDistanceMode(dev, 2); // 2 = VL53L1X_DISTANCEMODE_LONG
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] = "VL53L1X_SetDistanceMode failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -173,7 +173,7 @@ int enableSensor(int i) {
 	}
 
 	err = VL53L1X_SetTimingBudgetInMs(dev, 20);
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] =
 				"VL53L1X_SetTimingBudgetInMs failed    \n";
 		uint8_t len = sizeof(msg) - 1;
@@ -189,7 +189,7 @@ int enableSensor(int i) {
 	}
 
 	err = VL53L1X_SetInterMeasurementInMs(dev, 25);
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] =
 				"VL53L1X_SetInterMeasurementInMs failed    \n";
 		uint8_t len = sizeof(msg) - 1;
@@ -205,7 +205,7 @@ int enableSensor(int i) {
 	}
 
 	err = VL53L1X_StartRanging(dev);
-	if (err != VL53L1X_ERROR_NONE) {
+	if (err != VL53L1_ERROR_NONE) {
 		uint8_t msg[] = "VL53L1X_StartRanging failed    \n";
 		uint8_t len = sizeof(msg) - 1;
 		msg[len - 1 - 1] = i + '0';
@@ -237,16 +237,16 @@ void scan(I2C_HandleTypeDef *hi2c) {
 		HAL_StatusTypeDef result = HAL_I2C_IsDeviceReady(hi2c, (i << 1), 2, 2);
 		if (result != HAL_OK) // HAL_ERROR or HAL_BUSY or HAL_TIMEOUT
 				{
-			HAL_UART_Transmit(&huart1, ".", 1, 0xFFFF);
+			HAL_UART_Transmit(&huart1, (uint8_t*)".", 1, 0xFFFF);
 		}
 		if (result == HAL_OK) {
 			char buff[80];
 			sprintf(buff, "0x%X\n", i << 1);
-			HAL_UART_Transmit(&huart1, buff, strlen(buff), 0xFFFF);
+			HAL_UART_Transmit(&huart1, (uint8_t*)buff, strlen(buff), 0xFFFF);
 		}
 	}
 	char buff[] = "\nSCAN FINISH\n";
-	HAL_UART_Transmit(&huart1, buff, strlen(buff), 0xFFFF);
+	HAL_UART_Transmit(&huart1, (uint8_t*)buff, strlen(buff), 0xFFFF);
 }
 
 uint32_t ledColor[4];

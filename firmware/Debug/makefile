@@ -46,8 +46,8 @@ OBJCOPY_BIN += \
 all: 53xLidar.elf secondary-outputs
 
 # Tool invocations
-53xLidar.elf: $(OBJS) $(USER_OBJS) C:\Users\valer\Documents\53xLIDAR\firmware\STM32F411RETX_FLASH.ld
-	arm-none-eabi-gcc -o "53xLidar.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\valer\Documents\53xLIDAR\firmware\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="53xLidar.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+53xLidar.elf: $(OBJS) $(USER_OBJS) /home/mauro/git/53xLIDAR/firmware/STM32F411RETX_FLASH.ld
+	arm-none-eabi-gcc -o "53xLidar.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/mauro/git/53xLIDAR/firmware/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="53xLidar.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -13,6 +13,13 @@ extern "C"
 {
 #endif
 
+
+typedef enum {
+    VL53L1_ERROR_NONE,
+    VL53L1_ERROR_CONTROL_INTERFACE,
+	VL53L1_ERROR_INVALID_PARAMS,
+}VL53L1X_Error;
+
 /** @brief VL53L1_WriteMulti() definition.\n
  * To be implemented by the developer
  */

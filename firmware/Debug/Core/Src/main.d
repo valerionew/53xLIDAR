@@ -34,24 +34,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../USB_DEVICE/App/usb_device.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  ../USB_DEVICE/Target/usbd_conf.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_api.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_api_strings.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_def.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_ll_def.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_ll_device.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_types.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_user_config.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_error_codes.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_register_structs.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_register_map.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_user_defines.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_error_exceptions.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_api_core.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_ll_def.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_log.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_user_data.h \
- C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_def.h \
+ /home/mauro/git/53xLIDAR/firmware/Core/VL53L1X_API/core/VL53L1X_api.h \
+ /home/mauro/git/53xLIDAR/firmware/Core/VL53L1X_API/platform/vl53l1_platform.h \
+ /home/mauro/git/53xLIDAR/firmware/Core/VL53L1X_API/platform/vl53l1_types.h \
  ../Core/Src/WS2812.h
 
 ../Core/Inc/main.h:
@@ -126,40 +111,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../USB_DEVICE/Target/usbd_conf.h:
 
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_api.h:
+/home/mauro/git/53xLIDAR/firmware/Core/VL53L1X_API/core/VL53L1X_api.h:
 
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_api_strings.h:
+/home/mauro/git/53xLIDAR/firmware/Core/VL53L1X_API/platform/vl53l1_platform.h:
 
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_def.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_ll_def.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_ll_device.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_types.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_user_config.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_error_codes.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_register_structs.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_register_map.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_user_defines.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_error_exceptions.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_api_core.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_ll_def.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_log.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/platform/vl53l1_platform_user_data.h:
-
-C:/Users/valer/STM32CubeIDE/workspace_1.3.0/53xLidar/Core/VL53L1X_API/core/vl53l1_def.h:
+/home/mauro/git/53xLIDAR/firmware/Core/VL53L1X_API/platform/vl53l1_types.h:
 
 ../Core/Src/WS2812.h:

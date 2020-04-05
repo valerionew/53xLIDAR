@@ -47,14 +47,12 @@
 #define I2C_TIME_OUT_BASE   10
 #define I2C_TIME_OUT_BYTE   1
 
-enum VL53L1X_Error{
-    VL53L1_ERROR_NONE,
-    VL53L1_ERROR_CONTROL_INTERFACE,
-}
-
 uint8_t _I2CBuffer[256];
 
-I2C_HandleTypeDef *hw[2] = {I2C1, I2C2};
+//horrible hack because those libs have become worse than before and i need to squize all info (i2c bus and address) in an uint16
+extern I2C_HandleTypeDef hi2c1;
+extern I2C_HandleTypeDef hi2c2;
+I2C_HandleTypeDef *hw[2] = {&hi2c1, &hi2c2};
 
 int _I2CWrite(uint16_t dev, uint8_t *pdata, uint32_t count) {
     int status;
@@ -87,7 +85,6 @@ int8_t VL53L1_WriteMulti( uint16_t dev, uint16_t index, uint8_t *pdata, uint32_t
     _I2CBuffer[0] = index>>8;
     _I2CBuffer[1] = index&0xFF;
     memcpy(&_I2CBuffer[2], pdata, count);
-    VL53L1_GetI2cBus();
     status_int = _I2CWrite(dev, _I2CBuffer, count + 2);
     if (status_int != 0) {
         err = VL53L1_ERROR_CONTROL_INTERFACE;
@@ -101,7 +98,6 @@ int8_t VL53L1_ReadMulti(uint16_t dev, uint16_t index, uint8_t *pdata, uint32_t c
 
     _I2CBuffer[0] = index>>8;
     _I2CBuffer[1] = index&0xFF;
-    VL53L1_GetI2cBus();
     status_int = _I2CWrite(dev, _I2CBuffer, 2);
     if (status_int != 0) {
         err = VL53L1_ERROR_CONTROL_INTERFACE;
@@ -123,7 +119,6 @@ int8_t VL53L1_WrByte(uint16_t dev, uint16_t index, uint8_t data) {
     _I2CBuffer[1] = index&0xFF;
     _I2CBuffer[2] = data;
 
-    VL53L1_GetI2cBus();
     status_int = _I2CWrite(dev, _I2CBuffer, 3);
     if (status_int != 0) {
         err = VL53L1_ERROR_CONTROL_INTERFACE;
@@ -140,7 +135,6 @@ int8_t VL53L1_WrWord(uint16_t dev, uint16_t index, uint16_t data) {
     _I2CBuffer[2] = data >> 8;
     _I2CBuffer[3] = data & 0x00FF;
 
-    VL53L1_GetI2cBus();
     status_int = _I2CWrite(dev, _I2CBuffer, 4);
     if (status_int != 0) {
         err = VL53L1_ERROR_CONTROL_INTERFACE;
@@ -157,7 +151,7 @@ int8_t VL53L1_WrDWord(uint16_t dev, uint16_t index, uint32_t data) {
     _I2CBuffer[3] = (data >> 16) & 0xFF;
     _I2CBuffer[4] = (data >> 8)  & 0xFF;
     _I2CBuffer[5] = (data >> 0 ) & 0xFF;
-    VL53L1_GetI2cBus();
+
     status_int = _I2CWrite(dev, _I2CBuffer, 6);
     if (status_int != 0) {
         err = VL53L1_ERROR_CONTROL_INTERFACE;
@@ -171,7 +165,7 @@ int8_t VL53L1_RdByte(uint16_t dev, uint16_t index, uint8_t *data) {
 
     _I2CBuffer[0] = index>>8;
     _I2CBuffer[1] = index&0xFF;
-    VL53L1_GetI2cBus();
+
     status_int = _I2CWrite(dev, _I2CBuffer, 2);
     if( status_int ){
         err = VL53L1_ERROR_CONTROL_INTERFACE;
@@ -191,7 +185,7 @@ int8_t VL53L1_RdWord(uint16_t dev, uint16_t index, uint16_t *data) {
 
     _I2CBuffer[0] = index>>8;
     _I2CBuffer[1] = index&0xFF;
-    VL53L1_GetI2cBus();
+
     status_int = _I2CWrite(dev, _I2CBuffer, 2);
 
     if( status_int ){
@@ -215,7 +209,7 @@ int8_t VL53L1_RdDWord(uint16_t dev, uint16_t index, uint32_t *data) {
 
     _I2CBuffer[0] = index>>8;
     _I2CBuffer[1] = index&0xFF;
-    VL53L1_GetI2cBus();
+
     status_int = _I2CWrite(dev, _I2CBuffer, 2);
     if (status_int != 0) {
         err = VL53L1_ERROR_CONTROL_INTERFACE;
