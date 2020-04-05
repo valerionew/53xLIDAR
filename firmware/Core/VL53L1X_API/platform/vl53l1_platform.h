@@ -13,12 +13,6 @@ extern "C"
 {
 #endif
 
-typedef struct {
-	uint32_t dummy;
-} VL53L1_Dev_t;
-
-typedef VL53L1_Dev_t *VL53L1_DEV;
-
 /** @brief VL53L1_WriteMulti() definition.\n
  * To be implemented by the developer
  */
