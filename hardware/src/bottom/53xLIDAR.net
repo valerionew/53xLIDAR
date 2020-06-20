@@ -11,7 +11,7 @@
         (date 2018-08-10)
         (source 53xLIDAR.sch)
         (comment (number 1) (value "LICENSE: CERN OHL"))
-        (comment (number 2) (value 5N44P.github.io/53xLIDAR))
+        (comment (number 2) (value valerionew.github.io/53xLIDAR))
         (comment (number 3) (value "Bottom PCB for 53xLIDAR"))
         (comment (number 4) (value "")))))
   (components
