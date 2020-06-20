@@ -10,7 +10,7 @@ Date "2018-08-06"
 Rev "0"
 Comp "Valerio Nappi (valerionappi.it); Mauro Mombelli (github.com/MauroMombelli)"
 Comment1 "LICENSE: CERN OHL"
-Comment2 "5N44P.github.io/53xLIDAR"
+Comment2 "valerionew.github.io/53xLIDAR"
 Comment3 "Top I2C distribution PCB for 53xLIDAR"
 Comment4 ""
 $EndDescr
