@@ -11,6 +11,10 @@ For future use, there is an **LSM9DS1**, 9 DOF inertial sensor onboard.
 The lidar outputs the data via a virtual com port from the native Micro-USB, or via a 3.3V UART on a 4 pin JST-PH connector.  
 Power (5V 100mA) is provided through the USB or via the 4 pin uart connector.
 
+![image1](img/img1.jpg)
+![image2](img/img2.jpg)
+![image3](img/img3.jpg)
+
 
 ## Hardware
 The hardware is designed in KiCAD and released under CERN OHL licence. 
